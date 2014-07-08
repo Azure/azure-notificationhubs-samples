@@ -1,7 +1,7 @@
-Java REST wrapper for Windows Azure Notification Hubs
+Notification Hubs REST wrapper for Java 
 ==========================
 
-Java Back-end SDK for [Windows Azure Notification Hubs]. Using [REST APIs].
+Java Back-end SDK for [Azure Notification Hubs]. Using [REST APIs].
 
 Implements most of the Notification Hubs REST operations to perform registration management and send notification.
 
@@ -12,8 +12,6 @@ Please send feedback/comments, and pull requests... :)
 * Support for transparent sharding across multiple hubs (for apps with > 5M devices)
 * Support for Kindle Fire
 * Support for CreateRegistrationId and Upsert (reccommended pattern to create registrations)
-
-
 
 #Use
 

@@ -1,0 +1,26 @@
+<entry>
+    <id>https://{tenant}.servicebus.windows.net/{NotificationHub}/registrations/{registrationId}</id>
+    <title type="text"> /{NotificationHub}/registrations/{registrationId}</title>
+    <updated>2012-08-17T17:32:00Z</updated>
+    <metadata:etag>{weak Etag}</metadata:etag>
+    <content type="application/xml">
+    <WindowsTemplateRegistrationDescription xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/netservices/2010/10/servicebus/connect">
+        <ETag>3</ETag>
+        <ExpirationTime>2014-09-01T15:57:46.778Z</ExpirationTime>
+        <RegistrationId>8372532420827572008-85883004107185159-4</RegistrationId>
+            <Tags>myTag, myOtherTag</Tags>
+            <ChannelUri>https://bn1.notify.windows.com/?token=AgYAAADYej13M9aml3liD9nlfJw6FEgGXDvYmKDOfOwcS2ekCUm7hIrsJhGqkvU35pmJHFmXVbeUKJawqNHQKCtNJaI4z3uf3Gn04nrdSMUgzFapd%2fXYwzREnjz6%2fk9Pl6cy%2bdI%3d</ChannelUri>
+        	<BodyTemplate><![CDATA[<toast><visual><binding template="ToastText01"><text id="1">From any .NET App!</text></binding></visual></toast>]]></BodyTemplate>
+            <WnsHeaders>
+                <WnsHeader>
+                    <Header>X-WNS-Type</Header>
+                    <Value>wns/tile</Value>
+                </WnsHeader>
+                <WnsHeader>
+                    <Header>X-WNS-Tag</Header>
+                    <Value>myTag</Value>
+                </WnsHeader>
+            </WnsHeaders>
+        </WindowsTemplateRegistrationDescription>
+    </content>
+</entry>

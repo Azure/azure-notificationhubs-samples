@@ -1,0 +1,22 @@
+<entry>
+    <id>https://{tenant}.servicebus.windows.net/{NotificationHub}/registrations/{registrationId}</id>
+    <title type="text"> /{NotificationHub}/registrations/{registrationId}</title>
+    <updated>2012-08-17T17:32:00Z</updated>
+    <metadata:etag>{weak Etag}</metadata:etag>
+    <content type="application/xml">
+    <RegistrationDescription i:type="MpnsTemplateRegistrationDescription" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/netservices/2010/10/servicebus/connect">
+        <ETag>3</ETag>
+        <ExpirationTime>2014-09-01T15:57:46.778Z</ExpirationTime>
+        <RegistrationId>8372532420827572008-85883004107185159-4</RegistrationId>
+            <Tags>myTag, myOtherTag</Tags>
+            <ChannelUri>http://dm2.notify.live.net/throttledthirdparty/01.00/AQG9Ed13-Lb5RbCii5fWzpFpAgAAAAADAQAAAAQUZm52OkJCMjg1QTg1QkZDMkUxREQFBlVTTkMwMQ</ChannelUri>
+        	<BodyTemplate><![CDATA[<wp:Notification xmlns:wp="WPNotification"><wp:Toast><wp:Text1>$(message)</wp:Text1></wp:Toast></wp:Notification>]]></BodyTemplate>
+            <MpnsHeaders>
+                <MpnsHeader>
+                    <Header>X-WindowsPhone-Target</Header>
+                    <Value>toast</Value>
+                </MpnsHeader>
+            </MpnsHeaders>
+        </RegistrationDescription>
+    </content>
+</entry>

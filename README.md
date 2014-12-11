@@ -13,3 +13,9 @@ You can find a detailed readme in the `notificationhubs-rest-java` directory.
 This is a sample for sending notifications to Notification Hubs using PHP.
 
 You can find a detailed readme in the `notificationhubs-rest-PHP` directory.
+
+## Notification Hubs REST wrapper for Python
+This is a sample for sending notifications to Notification Hubs using Python.
+
+Detailed readme is available here - 
+http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-python-backend-how-to/

@@ -13,3 +13,6 @@ For registration management you have to follow the content formats shown in the 
 
 ## Notes
 This code is provided as-is with no guarantees.
+
+## Contributors
+Adrian Hall (Splunk)

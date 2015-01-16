@@ -2,6 +2,9 @@
 
 This repository will contain sample code for Notification Hubs.
 
+## Push to Chrome Apps
+Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps. See the tutorial here [Chrome Apps tutorial]
+
 ## Notification Hubs REST wrapper for Java
 
 **The official Java SDK is now available at - [Official Java SDK]. Please refer to it going forward.**
@@ -23,4 +26,5 @@ This is a sample for sending notifications to Notification Hubs using Python.
 Detailed readme is available here - 
 http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-python-backend-how-to/
 
-[Official Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backen
+[Official Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
+[Chrome Apps tutorial]: http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-chrome-get-started/ 

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title>GCM Registration</title>
+<script src="register.js"></script>
+<script src="CryptoJS v3.1.2/rollups/hmac-sha256.js"></script>
+<script src="CryptoJS v3.1.2/components/enc-base64-min.js"></script>
+</head>
+
+<body>
+
+Sender ID:<br/><input id="senderId" type="TEXT" size="20"><br/>
+<button id="registerWithGCM">Register with GCM</button>
+<br/>
+<br/>
+<br/>
+
+Notification Hub Name:<br/><input id="hubName" type="TEXT" style="width:400px"><br/><br/> 
+Connection String:<br/><textarea id="connectionString" type="TEXT" style="width:400px;height:60px"></textarea> 
+
+<br/>
+
+<button id="registerWithNH" disabled="true">Register with Azure Notifications Hub</button>
+
+<br/>
+<br/>
+
+<textarea id="console" type="TEXT" readonly style="width:500px;height:200px;background-color:#e5e5e5;padding:5px"></textarea> 
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+C:\Users\piyushjo\Documents\GitHub\azure-notificationhubs-samples\SilverlightPhoneAppPushNotification\SilverlightPhoneAppPushNotification\SilverlightPhoneAppPushNotification.csproj;neutral

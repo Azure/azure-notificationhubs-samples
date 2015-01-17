@@ -6,6 +6,8 @@ This repository will contain sample code for Notification Hubs.
 
 **The official Java SDK is now available at - [Official Java SDK]. Please refer to it going forward.**
 
+![][1]
+
 This is a fully working sample of a server SDK for Notification Hubs in Java. It contains REST wrappers for all operations including seding notifications and registration management.
 
 It also contains an implementation of partitioning logic in case you have to use multiple Notification Hubs for very high scale apps (>10M users).
@@ -24,3 +26,5 @@ Detailed readme is available here -
 http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-python-backend-how-to/
 
 [Official Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backen
+
+[1]: http://www.bing.com/

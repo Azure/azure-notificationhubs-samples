@@ -1,0 +1,8 @@
+{
+    "websiteName": "Azure Notification Hubs Push Demo",
+    "websitePushID": "web.com.example.azurenhpush",
+    "allowedDomains": ["http://piyushjosafaripush.azurewebsites.net", "https://piyushjosafaripush.azurewebsites.net"],
+    "urlFormatString": "http://piyushjosafaripush.azurewebsites.net/%@",
+    "authenticationToken": "19f8d7a6e9fb8a7f6d9330dabe",
+    "webServiceURL": "https://piyushjosafaripush.azurewebsites.net"
+}

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafariPushNotifications", "SafariPushNotifications\SafariPushNotifications.csproj", "{C9609D36-3E3D-48B1-9284-24FF940B1531}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{B0B8AE3F-5BEC-4CA8-9E6A-2DC6CEEDB702}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{FF41E4A1-FEED-40FB-9D23-95812E62A3CD}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\SafariPushNotifications-WAWS-dev.json = PublishScripts\Configurations\SafariPushNotifications-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9609D36-3E3D-48B1-9284-24FF940B1531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9609D36-3E3D-48B1-9284-24FF940B1531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9609D36-3E3D-48B1-9284-24FF940B1531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9609D36-3E3D-48B1-9284-24FF940B1531}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF41E4A1-FEED-40FB-9D23-95812E62A3CD} = {B0B8AE3F-5BEC-4CA8-9E6A-2DC6CEEDB702}
+	EndGlobalSection
+EndGlobal

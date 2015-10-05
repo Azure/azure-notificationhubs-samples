@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+Package.StoreAssociation.xml
 
 # Build results
 [Dd]ebug/

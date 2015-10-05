@@ -52,8 +52,7 @@ namespace NotifyUsers
         {
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
 
-//            var hub = new NotificationHub("<hub name>", "<connection string with listen access>");
-            var hub = new NotificationHub("wesmc-hub", "Endpoint=sb://wesmc-hub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=NaGFBFLZy0fw+eZE+40KQ/Rw5wXkO/s6MIbGjpj8eCs=");
+            var hub = new NotificationHub("<hub name>", "<connection string with listen access>");
             var result = await hub.RegisterNativeAsync(channel.Uri);
 
             // Displays the registration ID so you know it was successful

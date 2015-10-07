@@ -31,8 +31,7 @@ namespace NotifyUsers
     public sealed partial class MainPage : Page
     {
 
-//        private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
-        private static string BACKEND_ENDPOINT = "http://appbackend6159.azurewebsites.net";
+        private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
 
         public MainPage()
         {

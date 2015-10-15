@@ -30,7 +30,7 @@ namespace NotifyUsers
     public sealed partial class MainPage : Page
     {
 
-        private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
+        private static string BACKEND_ENDPOINT = "<ENTER YOUR BACKEND ENDPOINT>";
 
 
         public MainPage()
@@ -102,6 +102,8 @@ namespace NotifyUsers
 
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
 
+            channel.PushNotificationReceived += channel_PushNotificationReceived;
+
             // The "username:<user name>" tag gets automatically added by the message handler in the backend.
             // The tag passed here can be whatever other tags you may want to use.
             try
@@ -118,6 +120,15 @@ namespace NotifyUsers
                 MessageDialog alert = new MessageDialog(ex.Message, "Failed to register with RegisterClient");
                 alert.ShowAsync();
             }
+        }
+
+        async void channel_PushNotificationReceived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
+            {
+                var alert = new MessageDialog(args.ToastNotification.Content.InnerText, "New Notification Received In App");
+                await alert.ShowAsync();
+            });
         }
 
         private void SetAuthenticationTokenInLocalStorage()

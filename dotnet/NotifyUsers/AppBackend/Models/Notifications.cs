@@ -16,7 +16,7 @@ namespace AppBackend.Models
 
         private Notifications()
         {
-//            Hub = NotificationHubClient.CreateClientFromConnectionString("<Enter your connection string with full access", "your hub name");
+            Hub = NotificationHubClient.CreateClientFromConnectionString("<Enter your connection string with full access", "your hub name");
         }
     }
 }

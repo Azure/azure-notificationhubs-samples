@@ -14,6 +14,19 @@ Azure Notification Hubs Windows Phone SDK currently does not support using WNS w
 ### [Push to WNS]
 This sample is useful when you want to test the end to end flow between client app and WNS without Azure Notification Hubs in the picture. This helps in validating that your client app is set up correctly as well that you have the correct Package SID & Secret that you are configuring in the Azure Notification Hubs. In case the PNS responds with an error then you also get to see the exact error from the WNS itself providing additional information.
 
+### [DotNet]
+
+This folder contains the completed projects for the Notification Hub tutorials for the Windows platform. The first tutorial in the series is [Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+
+### [iOS]
+
+This folder contains the completed projects for the Notification Hub tutorials for the iOS platform. The first tutorial in the series is [Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/)
+
+### [Android]
+
+This folder contains the completed projects for the Notification Hub tutorials for the Android platform. The first tutorial in the series is [Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
+
+
 ### [Enterprise Push Sample]
 http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-enterprise-push-architecture/
 
@@ -43,3 +56,6 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-java
 [PHP SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [Python SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
+[DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet
+[iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS
+[Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android

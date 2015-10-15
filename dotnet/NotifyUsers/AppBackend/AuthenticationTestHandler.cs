@@ -47,7 +47,7 @@ namespace AppBackend
 
         private bool verifyUserAndPwd(string user, string password)
         {
-            // This is not a real authentication scheme.
+            // Note: This is not a real authentication scheme.
             return user == password;
         }
 

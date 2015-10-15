@@ -1,18 +1,7 @@
 # Notification Hubs Samples
 
-This repository will contain sample code for Notification Hubs.
+This repository contains sample code for Azure Notification Hubs.
 
-### [Push to Safari]
-Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites. 
-
-### [Push to Chrome Apps]
-Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps. 
-
-### [Push to SL Phone]
-Azure Notification Hubs Windows Phone SDK currently does not support using WNS with Windows Phone 8.1 Silverlight apps. This sample takes you through the steps to create a Windows Phone 8.1 Silverlight app which registers with Azure Notification Hubs so that it can receive notifications via Notification Hubs. 
-
-### [Push to WNS]
-This sample is useful when you want to test the end to end flow between client app and WNS without Azure Notification Hubs in the picture. This helps in validating that your client app is set up correctly as well that you have the correct Package SID & Secret that you are configuring in the Azure Notification Hubs. In case the PNS responds with an error then you also get to see the exact error from the WNS itself providing additional information.
 
 ### [DotNet]
 
@@ -26,6 +15,18 @@ This folder contains the completed projects for the Notification Hub tutorials f
 
 This folder contains the completed projects for the Notification Hub tutorials for the Android platform. The first tutorial in the series is [Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
 
+
+### [Push to Safari]
+Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites. 
+
+### [Push to Chrome Apps]
+Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps. 
+
+### [Push to SL Phone]
+Azure Notification Hubs Windows Phone SDK currently does not support using WNS with Windows Phone 8.1 Silverlight apps. This sample takes you through the steps to create a Windows Phone 8.1 Silverlight app which registers with Azure Notification Hubs so that it can receive notifications via Notification Hubs. 
+
+### [Push to WNS]
+This sample is useful when you want to test the end to end flow between client app and WNS without Azure Notification Hubs in the picture. This helps in validating that your client app is set up correctly as well that you have the correct Package SID & Secret that you are configuring in the Azure Notification Hubs. In case the PNS responds with an error then you also get to see the exact error from the WNS itself providing additional information.
 
 ### [Enterprise Push Sample]
 http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-enterprise-push-architecture/

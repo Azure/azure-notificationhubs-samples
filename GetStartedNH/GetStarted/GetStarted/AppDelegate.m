@@ -29,8 +29,8 @@
 
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
-    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:@"Endpoint=sb://blablabla"
-                                                             notificationHubPath:@"wesmc-hub"];
+    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:@"<Enter your listen connection string>"
+                                                             notificationHubPath:@"<Enter your hub name>"];
     
     [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
         if (error != nil) {

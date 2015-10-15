@@ -178,3 +178,4 @@ FakesAssemblies/
 
 #OSX files
 .DS_Store
+xcuserdata/

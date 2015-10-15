@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
     private String HubSasKeyValue = null;
     private String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

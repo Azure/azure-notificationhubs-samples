@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1F89B51BD071F5009B8078 /* HubInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubInfo.h; sourceTree = "<group>"; };
 		2BD1C84B1BCDCF96008C578C /* GetStarted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetStarted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD1C84F1BCDCF96008C578C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BD1C8511BCDCF96008C578C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 				2BD1C8541BCDCF96008C578C /* ViewController.h */,
 				2BD1C8551BCDCF96008C578C /* ViewController.m */,
 				2BD1C8571BCDCF96008C578C /* Main.storyboard */,
+				2B1F89B51BD071F5009B8078 /* HubInfo.h */,
 				2BD1C85A1BCDCF96008C578C /* Assets.xcassets */,
 				2BD1C85C1BCDCF96008C578C /* LaunchScreen.storyboard */,
 				2BD1C85F1BCDCF96008C578C /* Info.plist */,

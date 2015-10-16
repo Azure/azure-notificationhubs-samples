@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
-
+#import "HubInfo.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UIWindow *window;
 
 @end
 

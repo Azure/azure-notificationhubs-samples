@@ -9,6 +9,7 @@ using AppBackend.Models;
 using System.Threading.Tasks;
 using System.Web;
 
+
 namespace AppBackend.Controllers
 {
     public class NotificationsController : ApiController
@@ -30,6 +31,19 @@ namespace AppBackend.Controllers
                     var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" +
                                 "From " + user + ": " + message + "</text></binding></visual></toast>";
                     outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
+
+                    // Windows 10
+                    toast = @"<toast><visual><binding template=""ToastGeneric""><text id=""1"">" +
+                                "From " + user + ": " + message + "</text></binding></visual></toast>";
+                    outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
+
+                    // Additionally sending Windows Phone Notification MPNS
+                    //toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                    //        "<wp:Notification xmlns:wp=\"WPNotification\"><wp:Toast><wp:Text1>" + 
+                    //            "From " + user + ": " + message + 
+                    //            "</wp:Text1></wp:Toast></wp:Notification>";
+                    //outcome = await Notifications.Instance.Hub.SendMpnsNativeNotificationAsync(toast, userTag);
+
                     break;
                 case "apns":
                     // iOS

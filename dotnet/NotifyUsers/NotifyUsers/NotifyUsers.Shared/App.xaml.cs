@@ -45,8 +45,10 @@ namespace NotifyUsers
 
 
         /// <summary>
+        /// This code is ONLY used if you are not using the ASP.NET backend for registration.
+        /// 
         /// This code retrieves the channel URI for the app from WNS, and then registers that channel URI with your notification hub.
-        /// This method will be executed during the OnLaunched() event handler.
+        /// This method will be executed during the OnLaunched() event handler and should be commented out if using the ASP.NET backend.
         /// </summary>
         private async void InitNotificationsAsync()
         {
@@ -81,6 +83,7 @@ namespace NotifyUsers
             }
 #endif
 
+            // Using the ASP.NET backend for registration and sending notifications.
             //InitNotificationsAsync();
 
             Frame rootFrame = Window.Current.Content as Frame;

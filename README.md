@@ -1,6 +1,20 @@
 # Notification Hubs Samples
 
-This repository will contain sample code for Notification Hubs.
+This repository contains sample code for Azure Notification Hubs.
+
+
+### [DotNet]
+
+This folder contains the completed projects for the Notification Hub tutorials for the Windows platform. The first tutorial in the series is [Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+
+### [iOS]
+
+This folder contains the completed projects for the Notification Hub tutorials for the iOS platform. The first tutorial in the series is [Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/)
+
+### [Android]
+
+This folder contains the completed projects for the Notification Hub tutorials for the Android platform. The first tutorial in the series is [Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
+
 
 ### [Push to Safari]
 Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites. 
@@ -43,3 +57,6 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [Java SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-java
 [PHP SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [Python SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
+[DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet
+[iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS
+[Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android

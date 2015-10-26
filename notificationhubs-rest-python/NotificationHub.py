@@ -139,19 +139,19 @@ class NotificationHub:
 
     def send_apple_notification(self, payload, tags=""):
         nh = Notification("apple", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_gcm_notification(self, payload, tags=""):
         nh = Notification("gcm", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_adm_notification(self, payload, tags=""):
         nh = Notification("adm", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_baidu_notification(self, payload, tags=""):
         nh = Notification("baidu", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_mpns_notification(self, payload, tags=""):
         nh = Notification("windowsphone", payload)
@@ -163,7 +163,7 @@ class NotificationHub:
             nh.headers = {'X-WindowsPhone-Target': 'tile'}
             nh.headers = {'X-NotificationClass': '1'}
 
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_windows_notification(self, payload, tags=""):
         nh = Notification("windows", payload)
@@ -175,8 +175,8 @@ class NotificationHub:
         elif "<badge>" in payload:
             nh.headers = {'X-WNS-Type': 'wns/badge'}
 
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_template_notification(self, properties, tags=""):
         nh = Notification("template", properties)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)

@@ -139,6 +139,16 @@ csx/
 # Windows Store app package directory
 AppPackages/
 
+
+# Xamarin
+*.userprefs
+
+
+# Python
+__pycache__/
+
+
+
 # Others
 sql/
 *.Cache

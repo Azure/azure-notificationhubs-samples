@@ -183,7 +183,8 @@ class NotificationHub:
 
 
 
-hub = NotificationHub("myConnectionString", "myNotificationHubName", True)
+isDebug = True
+hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 
 wns_payload = """<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Python Test</text></binding></visual></toast>"""
 hub.send_windows_notification(wns_payload)

@@ -157,11 +157,9 @@ class NotificationHub:
         nh = Notification("windowsphone", payload)
 
         if "<wp:Toast>" in payload:
-            nh.headers = {'X-WindowsPhone-Target': 'toast'}
-            nh.headers = {'X-NotificationClass': '2'}
+            nh.headers = {'X-WindowsPhone-Target': 'toast', 'X-NotificationClass': '2'}
         elif "<wp:Tile>" in payload:
-            nh.headers = {'X-WindowsPhone-Target': 'tile'}
-            nh.headers = {'X-NotificationClass': '1'}
+            nh.headers = {'X-WindowsPhone-Target': 'tile', 'X-NotificationClass': '1'}
 
         self.send_notification(nh, tags)
 

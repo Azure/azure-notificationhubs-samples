@@ -19,10 +19,18 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.google.android.gms:play-services-base:6.5.87'
-    compile files('libs/notification-hubs-0.3.jar')
+    compile 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
+    compile files('libs/notification-hubs-0.4.jar')
+}
+
+repositories {
+    maven {
+        url  "http://dl.bintray.com/microsoftazuremobile/SDK"
+    }
 }

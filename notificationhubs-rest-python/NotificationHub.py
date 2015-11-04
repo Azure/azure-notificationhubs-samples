@@ -139,31 +139,29 @@ class NotificationHub:
 
     def send_apple_notification(self, payload, tags=""):
         nh = Notification("apple", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_gcm_notification(self, payload, tags=""):
         nh = Notification("gcm", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_adm_notification(self, payload, tags=""):
         nh = Notification("adm", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_baidu_notification(self, payload, tags=""):
         nh = Notification("baidu", payload)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_mpns_notification(self, payload, tags=""):
         nh = Notification("windowsphone", payload)
 
         if "<wp:Toast>" in payload:
-            nh.headers = {'X-WindowsPhone-Target': 'toast'}
-            nh.headers = {'X-NotificationClass': '2'}
+            nh.headers = {'X-WindowsPhone-Target': 'toast', 'X-NotificationClass': '2'}
         elif "<wp:Tile>" in payload:
-            nh.headers = {'X-WindowsPhone-Target': 'tile'}
-            nh.headers = {'X-NotificationClass': '1'}
+            nh.headers = {'X-WindowsPhone-Target': 'tile', 'X-NotificationClass': '1'}
 
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_windows_notification(self, payload, tags=""):
         nh = Notification("windows", payload)
@@ -175,8 +173,16 @@ class NotificationHub:
         elif "<badge>" in payload:
             nh.headers = {'X-WNS-Type': 'wns/badge'}
 
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
 
     def send_template_notification(self, properties, tags=""):
         nh = Notification("template", properties)
-        hub.send_notification(nh, tags)
+        self.send_notification(nh, tags)
+
+
+
+isDebug = True
+hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
+
+wns_payload = """<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Python Test</text></binding></visual></toast>"""
+hub.send_windows_notification(wns_payload)

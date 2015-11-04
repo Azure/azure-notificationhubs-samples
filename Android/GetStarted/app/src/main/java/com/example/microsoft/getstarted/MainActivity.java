@@ -28,20 +28,20 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class MainActivity extends ActionBarActivity {
 
-
-    private String SENDER_ID = "<your project number>";
     private GoogleCloudMessaging gcm;
     private NotificationHub hub;
-    private String HubName = "<Enter Your Hub Name>";
-    private String HubListenConnectionString = "<Your default listen connection string>";
     private static Boolean isVisible = false;
+
+//    private String SENDER_ID = "<your project number>";
+//    private String HubName = "<Enter Your Hub Name>";
+//    private String HubListenConnectionString = "<Your default listen connection string>";
 
     private String HubEndpoint = null;
     private String HubSasKeyName = null;
     private String HubSasKeyValue = null;
     private String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +79,23 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        isVisible = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isVisible = true;
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         isVisible = false;
     }
+
 
     /**
      * A modal AlertDialog for displaying a message on the UI thread

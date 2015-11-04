@@ -31,7 +31,8 @@ namespace NotifyUsers
     public sealed partial class MainPage : Page
     {
 
-        private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
+//        private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
+        private static string BACKEND_ENDPOINT = "http://appbackend6159.azurewebsites.net";
 
         public MainPage()
         {
@@ -87,10 +88,10 @@ namespace NotifyUsers
 
             channel.PushNotificationReceived += channel_PushNotificationReceived;
 
-            // The "username:<user name>" tag gets automatically added by the message handler in the backend.
-            // The tag passed here can be whatever other tags you may want to use.
             try
             {
+                // The "username:<user name>" tag gets automatically added by the message handler in the backend.
+                // The tag passed here can be whatever other tags you may want to use.
                 await new RegisterClient(BACKEND_ENDPOINT).RegisterAsync(channel.Uri, new string[] { "myTag" });
 
                 var dialog = new MessageDialog("Registered as: " + UsernameTextBox.Text);

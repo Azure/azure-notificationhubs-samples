@@ -75,6 +75,9 @@ namespace NotifyUsers
         private async Task<string> RetrieveRegistrationIdOrRequestNewOneAsync()
         {
             var settings = ApplicationData.Current.LocalSettings.Values;
+
+            // If we have not stored a registration id in application data, retrieve one
+            // and store in application data.
             if (!settings.ContainsKey("__NHRegistrationId"))
             {
                 using (var httpClient = new HttpClient())

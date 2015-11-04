@@ -32,7 +32,7 @@ namespace AppBackend.Controllers
                                 "From " + user + ": " + message + "</text></binding></visual></toast>";
                     outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
 
-                    // Windows 10
+                    // Windows 10 specific Action Center support
                     toast = @"<toast><visual><binding template=""ToastGeneric""><text id=""1"">" +
                                 "From " + user + ": " + message + "</text></binding></visual></toast>";
                     outcome = await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
@@ -55,6 +55,8 @@ namespace AppBackend.Controllers
                     var notif = "{ \"data\" : {\"message\":\"" + "From " + user + ": " + message + "\"}}";
                     outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif, userTag);
                     break;
+
+                    Notifications.Instance.Hub.SendWindowsNativeNotificationAsync()
             }
 
             if (outcome != null)

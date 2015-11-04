@@ -77,8 +77,8 @@ NSString *HubSasKeyValue;
         signature = [self CF_URLEncodedString:[rawHmac base64EncodedStringWithOptions:0]];
         
         // Construct authorization token string
-        token = [NSString stringWithFormat:@"SharedAccessSignature sr=%@&sig=%@&se=%qu&skn=%@",
-                 targetUri, signature, expires, HubSasKeyName];
+        token = [NSString stringWithFormat:@"SharedAccessSignature sig=%@&se=%qu&skn=%@&sr=%@",
+                 signature, expires, HubSasKeyName, targetUri];
     }
     @catch (NSException *exception)
     {
@@ -137,7 +137,7 @@ NSString *HubSasKeyValue;
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*) response;
-                                          if (error || httpResponse.statusCode != 200)
+                                          if (error || (httpResponse.statusCode != 200 && httpResponse.statusCode != 201))
                                           {
                                               NSLog(@"\nError status: %d\nError: %@", httpResponse.statusCode, error);
                                           }

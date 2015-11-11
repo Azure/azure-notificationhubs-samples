@@ -24,7 +24,7 @@ Then add the send code depending on your target mobile platform.
 
 ### Android
 
-    $message = '{"data":{"msg":"Hello from PHP!"}}';
+    $message = '{"data":{"message":"Hello from PHP!"}}';
     $notification = new Notification("gcm", $message);
     $hub->sendNotification($notification);
 

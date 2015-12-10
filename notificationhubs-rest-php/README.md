@@ -14,19 +14,19 @@ Then add the send code depending on your target mobile platform.
     $toast = '<toast><visual><binding template="ToastText01"><text id="1">Hello from PHP!</text></binding></visual></toast>';
     $notification = new Notification("windows", $toast);
     $notification->headers[] = 'X-WNS-Type: wns/toast';
-    $hub->sendNotification($notification);
+    $hub->sendNotification($notification, null);
 
 ### iOS
 
     $alert = '{"aps":{"alert":"Hello from PHP!"}}';
     $notification = new Notification("apple", $alert);
-    $hub->sendNotification($notification);
+    $hub->sendNotification($notification, null);
 
 ### Android
 
     $message = '{"data":{"message":"Hello from PHP!"}}';
     $notification = new Notification("gcm", $message);
-    $hub->sendNotification($notification);
+    $hub->sendNotification($notification, null);
 
 ### Windows Phone 8.0 and 8.1 Silverlight
 
@@ -39,14 +39,14 @@ Then add the send code depending on your target mobile platform.
     $notification = new Notification("mpns", $toast);
     $notification->headers[] = 'X-WindowsPhone-Target : toast';
     $notification->headers[] = 'X-NotificationClass : 2';
-    $hub->sendNotification($notification);
+    $hub->sendNotification($notification, null);
 
 
 ### Kindle Fire
 
     $message = '{"data":{"msg":"Hello from PHP!"}}';
     $notification = new Notification("adm", $message);
-    $hub->sendNotification($notification);
+    $hub->sendNotification($notification, null);
 
 ## Registration management
 

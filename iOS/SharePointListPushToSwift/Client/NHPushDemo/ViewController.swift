@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         
         
         //REGISTER DEVICE TOKEN WITH TAGS:CATEGORIES
-        let hub = SBNotificationHub.init(connectionString: "Endpoint=sb://anhdemomimins.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=pFqGQdqPt8rCfKeW0DR8WCmueHcY+NwTBJbQU4pPjr4=", notificationHubPath: "anhdemomimi")
+        let hub = SBNotificationHub.init(connectionString: "{notification hub listening string}", notificationHubPath: "{notification hub name}")
         
         do {
             _ = try hub.unregisterAllWithDeviceToken(deviceToken)

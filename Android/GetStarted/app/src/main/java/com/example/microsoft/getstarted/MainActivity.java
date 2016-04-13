@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private GoogleCloudMessaging gcm;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    public static Boolean isVisible = false;
     private static final String TAG = "MainActivity";
 
     @Override
@@ -68,25 +69,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        MyHandler.isVisible = true;
+        isVisible = true;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MyHandler.isVisible = false;
+        isVisible = false;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        MyHandler.isVisible = true;
+        isVisible = true;
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        MyHandler.isVisible = false;
+        isVisible = false;
     }
 
     public void ToastNotify(final String notificationMessage)

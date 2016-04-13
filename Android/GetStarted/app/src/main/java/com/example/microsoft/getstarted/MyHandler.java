@@ -19,7 +19,6 @@ public class MyHandler extends NotificationsHandler {
     public static final int NOTIFICATION_ID = 1;
     private NotificationManager mNotificationManager;
     NotificationCompat.Builder builder;
-    public static Boolean isVisible = false;
     Context ctx;
 
     @Override
@@ -27,7 +26,7 @@ public class MyHandler extends NotificationsHandler {
         ctx = context;
         String nhMessage = bundle.getString("message");
         sendNotification(nhMessage);
-        if (isVisible) {
+        if (MainActivity.isVisible) {
             MainActivity.mainActivity.ToastNotify(nhMessage);
         }
     }

@@ -4,7 +4,7 @@ This Android Studio 2.0 project is a copy of the completed code for the [Sending
 
 * You must update your **Google (GCM)** access policy on the setting blade of your notification hub with the GCM API key you created for your Android app.
 
-* You must also update the following placeholders in [NotificationSettings.java](./app/src/main/java/com/example/microsoft/getstarted.NotificationSettings.java):
+* You must also update the following placeholders in [NotificationSettings.java](./app/src/main/java/com/example/microsoft/getstarted/NotificationSettings.java):
 
 	- **SenderId**: Set to the project number that you obtained earlier from the project that you created in the Google Cloud Console.
 	- **HubName**: Use the name of your notification hub that appears at the top of the page in Azure for your hub (not the full URL). For example, use "myhub".

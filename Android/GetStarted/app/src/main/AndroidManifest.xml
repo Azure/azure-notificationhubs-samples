@@ -4,17 +4,13 @@
     package="com.example.microsoft.getstarted">
 
     <application
-
-        tools:replace="android:icon"
-
         android:allowBackup="true"
+        tools:replace="android:icon"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +18,11 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+        <service android:name="com.example.microsoft.getstarted.MyInstanceIDService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -32,6 +31,15 @@
                 <category android:name="com.example.microsoft.getstarted" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="com.example.microsoft.getstarted.RegistrationIntentService"
+            android:exported="false">
+        </service>
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -41,5 +49,7 @@
 
     <permission android:name="com.example.microsoft.getstarted.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <uses-permission android:name="com.example.microsoft.getstarted.permission.C2D_MESSAGE"/>
+
+
 
 </manifest>

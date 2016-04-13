@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'com.google.gms.google-services'
+
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 23
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.example.microsoft.getstarted"
         minSdkVersion 9
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -21,16 +23,15 @@ android {
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.google.android.gms:play-services-base:6.5.87'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
-    compile files('libs/notification-hubs-0.4.jar')
 }
 
 repositories {
     maven {
-        url  "http://dl.bintray.com/microsoftazuremobile/SDK"
+        url "http://dl.bintray.com/microsoftazuremobile/SDK"
     }
 }

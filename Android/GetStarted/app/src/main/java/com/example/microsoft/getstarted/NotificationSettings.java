@@ -7,4 +7,5 @@ public class NotificationSettings {
     public static String SenderId = "<your project number>";
     public static String HubName = "<your hub name>";
     public static String HubListenConnectionString = "< your DefaultListenSharedAccessSignature>";
+    public static String HubFullAccess = "<your DefaultFullSharedAccessSignature>";    
 }

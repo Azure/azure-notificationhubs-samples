@@ -22,10 +22,15 @@ namespace SendRestExample
 
             // Example sending a native notification
             Console.WriteLine("\nNotification Message ID : ");
-            String messageId = SendNativeNotificationREST(hubName, fullConnectionString, "Hello From REST", "GCM").Result;
+            //String messageId = SendNativeNotificationREST(hubName, fullConnectionString, "Hello From REST", "GCM").Result;
             //String messageId = SendNativeNotificationREST(hubName, fullConnectionString, "Hello From REST", "WNS").Result;
-            //String messageId = SendNativeNotificationREST(hubName, fullConnectionString, "Hello From REST", "APNS").Result;
-            Console.WriteLine(messageId + "\n");
+            String messageId = SendNativeNotificationREST(hubName, fullConnectionString, "Hello From REST", "APNS").Result;
+
+            if (messageId != null)
+                Console.WriteLine(messageId + "\n");
+            else
+                //https://azure.microsoft.com/pricing/details/notification-hubs
+                Console.WriteLine("No message Id retrieved.  Is telemetry enabled on your notification hub tier?\n");
 
 
             //Better to send one template notification that can be received by all platforms
@@ -33,19 +38,25 @@ namespace SendRestExample
 
 
             // Get telemetry on the notification. Useful for troubleshooting.
-            Console.WriteLine("\nWaiting 2 minutes before retrieving telemetry on the notification...\n");
-            System.Threading.Thread.Sleep(1000 * 60 * 2);
-            Console.WriteLine("Telemetry for " + messageId + "\n");
-            HttpWebResponse telemetryResponse = GetNotificationTelemtry(messageId, hubName, fullConnectionString).Result;
-            DisplayResponseBody(telemetryResponse);
+            if (messageId != null)
+            {
+                Console.WriteLine("\nWaiting 0.5 minutes before retrieving telemetry on the notification...\n");
+                System.Threading.Thread.Sleep(1000 * 30);
+                Console.WriteLine("Telemetry for " + messageId + "\n");
+                HttpWebResponse telemetryResponse = GetNotificationTelemtry(messageId, hubName, fullConnectionString).Result;
+                DisplayResponseBody(telemetryResponse);
+            }
 
 
             // Pull all PNS feedback for the hub. Useful for troubleshooting.
             Console.Write("\nPress enter to pull all PNS feedback from the hub...");
             Console.ReadLine();
             string containerUri = GetPlatformNotificationServiceFeedbackContainer(hubName, fullConnectionString).Result;
-            Console.WriteLine("\nPNS Feedback Container URI :\n" + containerUri);
-            WalkBlobContainer(containerUri).Wait();
+            if (containerUri != null)
+            {
+                Console.WriteLine("\nPNS Feedback Container URI :\n" + containerUri);
+                WalkBlobContainer(containerUri).Wait();
+            }
         }
 
         private static async Task<string> SendNativeNotificationREST(string hubname, string connectionString, string message, string nativeType)
@@ -108,13 +119,17 @@ namespace SendRestExample
                 return string.Format("Failed to get notification message id - Http Status {0} : {1}", (int)response.StatusCode, response.StatusCode.ToString());
             }
 
-            location = response.Headers.Get("Location");
-            string[] locationUrl = location.Split(seps1);
-            string[] locationParts = locationUrl[0].Split(seps2);
+            if ((location = response.Headers.Get("Location")) != null)
+            {
+                string[] locationUrl = location.Split(seps1);
+                string[] locationParts = locationUrl[0].Split(seps2);
 
-            notificationId = locationParts[locationParts.Length - 1];
+                notificationId = locationParts[locationParts.Length - 1];
 
-            return notificationId;
+                return notificationId;
+            }
+            else
+                return null;
         }
 
         private static async Task<HttpWebResponse> GetNotificationTelemtry(string id, string hubname, string connectionString)
@@ -150,8 +165,17 @@ namespace SendRestExample
 
             if ((int)response.StatusCode != 200)
             {
-                return string.Format("Failed to get PNS feedback contaioner URI - Http Status {0} : {1}", 
-                    (int)response.StatusCode, response.StatusCode);
+                Console.WriteLine(string.Format("Failed to get PNS feedback contaioner URI - Http Status {0} : {1}", 
+                    (int)response.StatusCode, response.StatusCode));
+
+                // Get the stream associated with the response.
+                Stream errorStream = response.GetResponseStream();
+
+                // Pipes the stream to a higher level stream reader with the required encoding format. 
+                StreamReader errorReader = new StreamReader(errorStream, Encoding.UTF8);
+                Console.WriteLine("\n" + errorReader.ReadToEnd());
+
+                return null;
             }
 
             // Get the stream associated with the response.
@@ -233,6 +257,7 @@ namespace SendRestExample
         private static async Task<HttpWebResponse> ExecuteREST(string httpMethod, string uri, string sasToken, WebHeaderCollection headers = null, string body = null, string contentType = "application/json")
         {
             //=== Execute the request 
+
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
             HttpWebResponse response = null;
 

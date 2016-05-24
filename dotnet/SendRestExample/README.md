@@ -1,5 +1,12 @@
 # Send REST
 
+## Requirements
+
+The [Per Message Telemetry: Get Notification Message Telemetry](https://msdn.microsoft.com/library/azure/mt608135.aspx) and [PNS Feedback](https://msdn.microsoft.com/library/azure/mt705560.aspx) APIs used in this example require a [standard tier notification hub](https://azure.microsoft.com/pricing/details/notification-hubs/).
+
+## Overview
+
+
 This Visual Studio 2015 project provides some example code for interacting with Azure Notification Hubs using the [Notification Hubs REST API](https://msdn.microsoft.com/en-us/library/azure/dn223264.aspx).
 
 This code requires your notification hub name and the DefaultFullSharedAccessSignature in the [App.config](https://github.com/Azure/azure-notificationhubs-samples/blob/master/dotnet/SendRestExample/SendRestExample/App.config) file.

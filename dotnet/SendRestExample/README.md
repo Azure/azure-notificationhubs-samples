@@ -2,7 +2,7 @@
 
 ## Requirements
 
-The following APIs used in this examkple require a [standard tier notification hub](https://azure.microsoft.com/pricing/details/notification-hubs/):
+The following APIs used in this example require a [standard tier notification hub](https://azure.microsoft.com/pricing/details/notification-hubs/):
 - [Per Message Telemetry: Get Notification Message Telemetry](https://msdn.microsoft.com/library/azure/mt608135.aspx) 
 - [PNS Feedback](https://msdn.microsoft.com/library/azure/mt705560.aspx)
 

@@ -6,7 +6,7 @@ This Android Studio 2.1.2 project is a copy of the completed code for the [Sendi
 
 * You must update your **Google (GCM)** access policy on the setting blade of your notification hub with the Server key from the Cloud Settings tab of your Firebase project 
 
-* You must also update the following placeholders in [NotificationSettings.java](./app/src/main/java/com/example/microsoft/getstarted/NotificationSettings.java):
+* You must also update the following placeholders in [NotificationSettings.java](./app/src/main/java/com/example/microsoft/getstartednh/NotificationSettings.java):
 
 	- **SenderId**: Set to the project number that you obtained from the Cloud Settings tab of your Firebase project.
 	- **HubName**: Use the name of your notification hub that appears at the top of the page in Azure for your hub (not the full URL). For example, use "myhub".

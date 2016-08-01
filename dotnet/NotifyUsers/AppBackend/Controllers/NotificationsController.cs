@@ -55,8 +55,6 @@ namespace AppBackend.Controllers
                     var notif = "{ \"data\" : {\"message\":\"" + "From " + user + ": " + message + "\"}}";
                     outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif, userTag);
                     break;
-
-                    Notifications.Instance.Hub.SendWindowsNativeNotificationAsync()
             }
 
             if (outcome != null)

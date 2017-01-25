@@ -25,7 +25,7 @@ class NotificationHub {
 
 		foreach ($parts as $part) {
 			if (strpos($part, "Endpoint") === 0) {
-				$this->endpoint = "https" . substr($part, 11);
+				$this->endpoint = "https" . substr($part, 14);
 			} else if (strpos($part, "SharedAccessKeyName") === 0) {
 				$this->sasKeyName = substr($part, 20);
 			} else if (strpos($part, "SharedAccessKey") === 0) {
@@ -92,7 +92,7 @@ class NotificationHub {
 		if (is_array($notification->headers)) {
 			$headers = array_merge($headers, $notification->headers);
 		}
-		
+
 		curl_setopt_array($ch, array(
 		    CURLOPT_POST => TRUE,
 		    CURLOPT_RETURNTRANSFER => TRUE,
@@ -118,7 +118,7 @@ class NotificationHub {
 		//print_r($info);
 
 		//echo $response;
-	} 
+	}
 }
 
 ?>

@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         // urlConnection.setRequestProperty("ServiceBusNotification-Tags", "tag1 || tag2 || tag3");
 
                         // Send notification message
-                        urlConnection.setFixedLengthStreamingMode(json.length());
+                        urlConnection.setFixedLengthStreamingMode(json.getBytes().length);
                         OutputStream bodyStream = new BufferedOutputStream(urlConnection.getOutputStream());
                         bodyStream.write(json.getBytes());
                         bodyStream.close();

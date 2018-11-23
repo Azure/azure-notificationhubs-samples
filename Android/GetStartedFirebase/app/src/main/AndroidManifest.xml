@@ -29,13 +29,12 @@
             android:exported="false">
         </service>
 
-        <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+        <service
+            android:name=".MyFirebaseMessagingServiceHandler">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.example.microsoft.getstartednh" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </receiver>
+        </service>
 
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -45,7 +44,6 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
 
 

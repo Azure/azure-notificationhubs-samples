@@ -12,25 +12,27 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import com.microsoft.windowsazure.notifications.NotificationsHandler;
 
-public class MyHandler extends NotificationsHandler {
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+
+
+public class MyFirebaseMessagingServiceHandler extends FirebaseMessagingService {
     public static final int NOTIFICATION_ID = 1;
     private NotificationManager mNotificationManager;
-    NotificationCompat.Builder builder;
-    Context ctx;
 
     @Override
-    public void onReceive(Context context, Bundle bundle) {
-        ctx = context;
-        String nhMessage = bundle.getString("message");
-        sendNotification(nhMessage);
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        String nhMessage = remoteMessage.getData().get("message");  //bundle.getString("message");
+        showNotification(nhMessage);
         if (MainActivity.isVisible) {
             MainActivity.mainActivity.ToastNotify(nhMessage);
         }
     }
 
-    private void sendNotification(String msg) {
+    private void showNotification(String msg) {
+
+        Context ctx = getApplicationContext();
 
         Intent intent = new Intent(ctx, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

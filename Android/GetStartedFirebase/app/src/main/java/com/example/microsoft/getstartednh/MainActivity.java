@@ -3,7 +3,6 @@ package com.example.microsoft.getstartednh;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.microsoft.windowsazure.notifications.NotificationsManager;
 
 import android.content.Intent;
 import android.util.Log;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainActivity = this;
-        NotificationsManager.handleNotifications(this, NotificationSettings.SenderId, MyHandler.class);
+
         registerWithNotificationHubs();
     }
     /**
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
      * DefaultFullSharedAccess connection string and generates a SaS token. The
      * token is added to the Authorization header on the POST request to the
      * notification hub. The text in the editTextNotificationMessage control
-     * is added as the JSON body for the request to add a GCM message to the hub.
+     * is added as the JSON body for the request to add a FCM message to the hub.
      *
      * @param v
      */
@@ -195,8 +194,8 @@ public class MainActivity extends AppCompatActivity {
                         urlConnection.setRequestProperty("Authorization",
                                 generateSasToken(url.toString()));
 
-                        // Notification format should be GCM
-                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "gcm");
+                        // Notification format should be FCM
+                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "fcm");
 
                         // Include any tags
                         // Example below targets 3 specific tags
@@ -222,7 +221,9 @@ public class MainActivity extends AppCompatActivity {
                                 builder.append(line);
                             }
 
+                            Log.e(TAG, "Send Notification returned: " + builder.toString());
                             ToastNotify(builder.toString());
+
                         }
                     } finally {
                         urlConnection.disconnect();
@@ -231,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 catch(Exception e)
                 {
                     if (isVisible) {
+                        Log.e(TAG, "Exception Sending Notification", e);
                         ToastNotify("Exception Sending Notification : " + e.getMessage().toString());
                     }
                 }

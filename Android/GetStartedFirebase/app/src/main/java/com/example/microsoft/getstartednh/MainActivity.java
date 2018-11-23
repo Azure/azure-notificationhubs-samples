@@ -3,6 +3,9 @@ package com.example.microsoft.getstartednh;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import android.content.Intent;
 import android.util.Log;
@@ -73,12 +76,21 @@ public class MainActivity extends AppCompatActivity {
     public void registerWithNotificationHubs()
     {
         if (checkPlayServices()) {
-            // Start IntentService to register this application with FCM.
-            Intent intent = new Intent(this, RegistrationIntentService.class);
-            startService(intent);
+
+            FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+                @Override
+                public void onSuccess(InstanceIdResult instanceIdResult) {
+                    RegistrationIntentService.FCM_token = instanceIdResult.getToken();
+                    // Do whatever you want with your token now
+                    // i.e. store it on SharedPreferences or DB
+                    // or directly send it to server
+                    // Start IntentService to register this application with FCM.
+                    Intent intent = new Intent(mainActivity, RegistrationIntentService.class);
+                    startService(intent);
+                }
+            });
         }
     }
-
 
     /**
      * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx
@@ -195,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                                 generateSasToken(url.toString()));
 
                         // Notification format should be FCM
-                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "fcm");
+                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "gcm");
 
                         // Include any tags
                         // Example below targets 3 specific tags

@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                                 generateSasToken(url.toString()));
 
                         // Notification format should be FCM
-                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "gcm");
+                        urlConnection.setRequestProperty("ServiceBusNotification-Format", "fcm");
 
                         // Include any tags
                         // Example below targets 3 specific tags
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                                 builder.append(line);
                             }
 
-                            Log.e(TAG, "Send Notification returned: " + builder.toString());
+                            Log.i(TAG, builder.toString());
                             ToastNotify(builder.toString());
 
                         }
@@ -243,8 +243,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 catch(Exception e)
                 {
+                    Log.e(TAG, "Exception Sending Notification", e);
                     if (isVisible) {
-                        Log.e(TAG, "Exception Sending Notification", e);
                         ToastNotify("Exception Sending Notification : " + e.getMessage().toString());
                     }
                 }

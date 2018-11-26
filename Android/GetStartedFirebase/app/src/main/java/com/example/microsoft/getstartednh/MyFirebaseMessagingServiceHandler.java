@@ -31,7 +31,7 @@ public class MyFirebaseMessagingServiceHandler extends FirebaseMessagingService 
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        String nhMessage = remoteMessage.getData().get("message");  //bundle.getString("message");
+        String nhMessage = remoteMessage.getData().get("message");
         showNotification(nhMessage);
         if (MainActivity.isVisible) {
             MainActivity.mainActivity.ToastNotify(nhMessage);

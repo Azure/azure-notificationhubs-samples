@@ -25,8 +25,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:23.4.0'
     implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
-    implementation 'com.google.android.gms:play-services-base:16.0.1'
-    //implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.5@aar'
+    //implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
     implementation project(':notification-hubs-sdk')
 }
 

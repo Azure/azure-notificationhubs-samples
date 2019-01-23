@@ -40,7 +40,7 @@ http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-enterp
 
 ### [Programmatic Telemetry access]
 
-This sample is in the form of a VSTO Excel application which uses the Notification Hubs REST API to get the telemetry data and then uses the Excel functions to populate a spreadsheet with the data as well as generate a chart of the retrieved data. 
+This sample is in the form of a console application which is configured to call to HDInsights and print out metrics for a given Notification Hub and filter.
 
 ### [PHP SDK]
 
@@ -59,7 +59,7 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [Chrome Apps tutorial]: http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-chrome-get-started/
 
 [Enterprise Push Sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/EnteprisePush
-[Programmatic Telemetry access]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
+[Programmatic Telemetry access]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/NHTelemetry
 [Push to Chrome Apps]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToChromeApps
 [Push to SL Phone]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 [Push to Safari]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari

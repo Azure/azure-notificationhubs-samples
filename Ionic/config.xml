@@ -2,7 +2,7 @@
 <widget id="com.jwargo.ionicpush" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Azure Notification Hubs (Ionic 3)</name>
     <description>An Ionic 3 app for Azure Notification Hubs</description>
-    <author email="john.wargo@microsoft.com" href="http://microsoft.com">Azure Notification Hubs Team</author>
+    <author email="" href="https://azure.microsoft.com/en-us/services/notification-hubs/">Azure Notification Hubs Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

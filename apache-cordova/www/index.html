@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/topcoat-mobile-light.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Azure Notification Hubs (Cordova)</title>
+</head>
+
+<body>
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item center full">
+            <h1 class="topcoat-navigation-bar__title">Azure Notification Hubs</h1>
+        </div>
+    </div>
+    <p>This sample application demonstrates how to use the <a
+            href="https://github.com/derek82511/cordova-azure-notification-hubs"
+            target="_blank">cordova-azure-notification-hubs</a> plugin in a Cordova application. The app displays alert
+        dialogs when the app successfully registers and when it receives a notification message.</p>
+    <p id="regID">Registering device...</p>
+    <p id=azureID></p>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

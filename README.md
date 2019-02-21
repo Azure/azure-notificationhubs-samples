@@ -84,7 +84,7 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [Safari]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari
 [WNS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToWNSDirectly
 
-[Enterprise Push Sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/EnteprisePush
+[Enterprise Push]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/EnteprisePush
 [Programmatic Telemetry access]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/NHTelemetry
 
 <!-- SDK -->

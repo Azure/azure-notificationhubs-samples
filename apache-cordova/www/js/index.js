@@ -38,13 +38,7 @@ var app = {
 
             push.on('notification', function (data) {
                 console.log('Notification');
-                console.dir(data);
-                // console.log(data.message);
-                // console.log(data.title);
-                // console.log(data.count);
-                // console.log(data.sound);
-                // console.log(data.image);
-                // console.log(data.additionalData);
+                console.dir(data);                
                 alert(JSON.stringify(data));
             });
 
@@ -53,7 +47,6 @@ var app = {
             document.getElementById("regID").innerHTML = `<strong>Warning:</strong> ${warningMessage}`;
             alert(warningMessage);
         }
-
 
     }
 

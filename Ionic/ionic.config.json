@@ -1,0 +1,8 @@
+{
+  "name": "ionic-3-push-sample",
+  "app_id": "com.jwargo.ionicpush",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

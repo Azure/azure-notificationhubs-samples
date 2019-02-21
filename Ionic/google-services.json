@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "110926590674",
+    "firebase_url": "https://anh-push-test.firebaseio.com",
+    "project_id": "anh-push-test",
+    "storage_bucket": "anh-push-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110926590674:android:f9ba14bfc54f5d18",
+        "android_client_info": {
+          "package_name": "com.jwargo.cdvapush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110926590674-n3an996ae4ufq353r5irg8r7827kos6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz9onEWx_4Hq-Gk7qm0Zi1fHfGtPlwaXc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110926590674:android:6e15b9818a90e243",
+        "android_client_info": {
+          "package_name": "com.jwargo.ionicpush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110926590674-n3an996ae4ufq353r5irg8r7827kos6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz9onEWx_4Hq-Gk7qm0Zi1fHfGtPlwaXc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

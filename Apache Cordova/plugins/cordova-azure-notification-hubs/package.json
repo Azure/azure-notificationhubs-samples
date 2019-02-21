@@ -1,0 +1,68 @@
+{
+  "_from": "cordova-azure-notification-hubs@1.0.5",
+  "_id": "cordova-azure-notification-hubs@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-HhbRngsglMv6TWXD3a8yfrW05D0=",
+  "_location": "/cordova-azure-notification-hubs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-azure-notification-hubs@1.0.5",
+    "name": "cordova-azure-notification-hubs",
+    "escapedName": "cordova-azure-notification-hubs",
+    "rawSpec": "1.0.5",
+    "saveSpec": null,
+    "fetchSpec": "1.0.5"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-azure-notification-hubs/-/cordova-azure-notification-hubs-1.0.5.tgz",
+  "_shasum": "1e16d19e0b2094cbfa4d65c3ddaf327eb5b4e43d",
+  "_spec": "cordova-azure-notification-hubs@1.0.5",
+  "_where": "/Users/johnwargo/dev/anh-test/cdva-push/node_modules",
+  "author": {
+    "name": "Chang, Cheng-Yi"
+  },
+  "bugs": {
+    "url": "https://github.com/derek82511/cordova-azure-notification-hubs/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-azure-notification-hubs",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Register and receive push notifications with Azure Notification Hubs.",
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.1": {
+        "cordova": ">=6.4.0",
+        "cordova-android": ">=6.1.2",
+        "cordova-ios": ">=4.4.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/derek82511/cordova-azure-notification-hubs",
+  "keywords": [
+    "ecosystem:cordova",
+    "ecosystem:phonegap",
+    "cordova-ios",
+    "cordova-android",
+    "azure",
+    "push",
+    "notification"
+  ],
+  "license": "MIT",
+  "name": "cordova-azure-notification-hubs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/derek82511/cordova-azure-notification-hubs.git"
+  },
+  "version": "1.0.5"
+}

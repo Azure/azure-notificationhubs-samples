@@ -68,6 +68,8 @@ This is a sample for sending notifications to Notification Hubs using Python.
 
 **The official Java SDK is now available at - [Official Java SDK]. Please refer to it going forward. This is here only for legacy reasons.**
 
+[Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android
+[Apache Cordova]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/A
 [Official Java SDK]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Chrome Apps tutorial]: http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-chrome-get-started/
 [Enterprise Push Sample]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/EnteprisePush
@@ -81,4 +83,3 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [Python SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
 [DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet
 [iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS
-[Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android

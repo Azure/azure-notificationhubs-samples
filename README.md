@@ -38,11 +38,11 @@ Samples illustrating how to send notifications to apps using Azure Notification 
 
 ### [Chrome Apps]
 
-Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps. 
+Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps.
 
 ### [Safari]
 
-Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites. 
+Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites.
 
 ### [WNS]
 

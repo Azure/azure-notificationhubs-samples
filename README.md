@@ -50,7 +50,7 @@ This sample is useful when you want to test the end to end flow between client a
 
 ## [Enterprise Push]
 
-http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-enterprise-push-architecture/
+The [Enterprise push architectural guidance] article provides architectural guidance as well as tutorials for the backend and client-side applications.
 
 ## [Programmatic Telemetry access]
 
@@ -85,6 +85,7 @@ This is a sample for sending notifications to Notification Hubs using Python.
 [WNS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToWNSDirectly
 
 [Enterprise Push]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/EnteprisePush
+[Enterprise Push Guidance]: http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-enterprise-push-architecture/
 [Programmatic Telemetry access]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/NHTelemetry
 
 <!-- SDK -->

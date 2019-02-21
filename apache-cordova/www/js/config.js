@@ -1,0 +1,4 @@
+const config = {
+    hubName: '',
+    hubConnectionString: '',
+}

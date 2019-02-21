@@ -1,0 +1,37 @@
+# borrowed from https://gist.github.com/elliot-labs/c92b3e52053906816074170ada511962
+
+# Project folders
+config/
+node_modules/
+platforms/
+plugins/
+
+# files
+pub.sh
+google-services.json
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+.apdisk
+
+# Windows
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# res
+resources/signing

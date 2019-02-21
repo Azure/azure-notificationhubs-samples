@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Azure Notification Hubs (Ionic 3)</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Notification Event
+    </ion-list-header>
+    <ion-item text-wrap>
+      <h2>Title</h2>
+      <p>{{event.title}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Message</h2>
+      <p>{{event.message}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Count</h2>
+      <p>{{event.count}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Sound</h2>
+      <p>{{event.sound}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Image</h2>
+      <p>{{event.image}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Additional Data</h2>
+      <p>{{event.additionalData}}</p>
+    </ion-item>
+    <ion-item text-wrap>
+      <h2>Received</h2>
+      <p>{{event.received}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

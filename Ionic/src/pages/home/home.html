@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> Azure Notification Hubs (Ionic 3) </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      {{ eventList.length ? 'Push Events': 'Waiting for registration' }}
+    </ion-list-header>
+    <ion-item (click)="viewEvent(event)" *ngFor="let event of eventList">
+      <h2>{{ event.title }}</h2>
+      <p>{{ event.received }}</p>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

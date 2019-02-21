@@ -58,6 +58,10 @@ This sample is in the form of a console application which is configured to call 
 
 ## SDK
 
+### [Java SDK]
+
+**The official Java SDK is now available at - [Official Java SDK]. Please refer to it going forward. This is here only for legacy reasons.**
+
 ### [PHP SDK]
 
 This is a sample for sending notifications to Notification Hubs using PHP.
@@ -66,15 +70,11 @@ This is a sample for sending notifications to Notification Hubs using PHP.
 
 This is a sample for sending notifications to Notification Hubs using Python.
 
-### [Java SDK]
-
-**The official Java SDK is now available at - [Official Java SDK]. Please refer to it going forward. This is here only for legacy reasons.**
-
 <!-- Sample Apps -->
 [Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android
 [Apache Cordova]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/apache-cordova
 [DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet
-[Ionic]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/ionic
+[Ionic]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Ionic
 [iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS
 [Silverlight Phone]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 

@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">GetStarted</string>
-    <string name="send_button">Send Notification</string>
-    <string name="notification_message_hint">Enter notification message text</string>
-</resources>

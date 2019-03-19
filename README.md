@@ -1,32 +1,36 @@
-# Notification Hubs Samples
+# Azure Notification Hubs Samples
 
-This repository contains sample code for Azure Notification Hubs. The links provided in this file point to tutorials in the Azure Notification Hubs documentation.
+This repository contains sample code for Azure Notification Hubs. Click on the heading to open the selected portion of the repository. The links in the sections below point to tutorials in the [Azure Notification Hubs documentation](https://docs.microsoft.com/en-us/azure/notification-hubs/).
+
+The sample applications for Android, iOS, and .NET were moved to the SDK repository for each target platform:
+
++ [Android SDK](https://github.com/Azure/azure-notificationhubs-android)
++ [iOS SDK](https://github.com/Azure/azure-notificationhubs-ios)
++ [.NET SDK](https://github.com/Azure/azure-notificationhubs-dotnet)
 
 ## Client Applications
 
 Samples illustrating how to use Azure Notification Hubs in a client application.
 
-### [Android]
+### Android
 
-1. [Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
+[Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
 
 ### [Apache Cordova]
 
 A simple example of how to use Azure Notification Hubs with an Apache Cordova application. The app uses the [cordova-azure-notification-hubs](https://github.com/derek82511/cordova-azure-notification-hubs) plugin.
 
-### [DotNet]
+### DotNet
 
-1. [Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+[Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
 
 ### [Ionic]
 
 A simple example of how to use Azure Notification Hubs with an Ionic 3 application. The app uses the [cordova-azure-notification-hubs](https://github.com/derek82511/cordova-azure-notification-hubs) plugin.
 
-### [iOS]
+### iOS
 
-1. [Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/).
-
-2. SharePointListPushToSwift has a Swift client app using Notification Hubs' iOS SDK with Obj-C/Swift bridging, and includes a .NET console backend that can be run locally to send push notifications to the client based on additions to an authentication required sharepoint list.
+[Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/).
 
 ## Push Apps
 
@@ -55,11 +59,11 @@ This is a sample for sending notifications to Notification Hubs using PHP.
 This is a sample for sending notifications to Notification Hubs using Python.
 
 <!-- Sample Apps -->
-[Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android
+<!-- [Android]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android -->
 [Apache Cordova]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/apache-cordova
-[DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet
+<!-- [DotNet]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet -->
 [Ionic]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Ionic
-[iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS
+<!-- [iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS -->
 
 <!-- Push Apps -->
 [Chrome Apps]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToChromeApps

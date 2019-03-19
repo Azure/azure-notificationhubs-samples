@@ -14,15 +14,15 @@ Samples illustrating how to use Azure Notification Hubs in a client application.
 
 ### Android
 
-+ [Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
+[Getting started with Notification Hubs for Android Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-android-get-started/)
 
 ### [Apache Cordova]
 
-+ A simple example of how to use Azure Notification Hubs with an Apache Cordova application. The app uses the [cordova-azure-notification-hubs](https://github.com/derek82511/cordova-azure-notification-hubs) plugin.
+A simple example of how to use Azure Notification Hubs with an Apache Cordova application. The app uses the [cordova-azure-notification-hubs](https://github.com/derek82511/cordova-azure-notification-hubs) plugin.
 
 ### DotNet
 
-+ [Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+[Getting started with Notification Hubs for Windows Store Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
 
 ### [Ionic]
 
@@ -30,7 +30,7 @@ A simple example of how to use Azure Notification Hubs with an Ionic 3 applicati
 
 ### iOS
 
-1. [Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/).
+[Getting started with Notification Hubs for iOS Apps](https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/).
 
 ## Push Apps
 

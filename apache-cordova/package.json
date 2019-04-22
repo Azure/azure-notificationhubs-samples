@@ -10,7 +10,7 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "cordova-android": "^6.2.3",
+        "cordova-android": "^8.0.0",
         "cordova-azure-notification-hubs": "^1.0.5",
         "cordova-ios": "^4.4.0",
         "cordova-plugin-console": "^1.1.0",
@@ -27,7 +27,6 @@
             "cordova-azure-notification-hubs": {}
         },
         "platforms": [
-            "android",
             "ios"
         ]
     }

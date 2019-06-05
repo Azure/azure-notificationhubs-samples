@@ -36,10 +36,6 @@ A simple example of how to use Azure Notification Hubs with an Ionic 3 applicati
 
 Samples illustrating how to send notifications to apps using Azure Notification Hubs.
 
-### [Chrome Apps]
-
-Sample Chrome App to demonstrate how to use Azure Notification Hubs to push to Chrome Apps.
-
 ### [Safari]
 
 Sample on how to send push notifications to Safari using Azure Notification Hubs and Azure Web Sites.
@@ -66,8 +62,6 @@ This is a sample for sending notifications to Notification Hubs using Python.
 <!-- [iOS]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS -->
 
 <!-- Push Apps -->
-[Chrome Apps]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToChromeApps
-[Chrome Apps tutorial]: http://azure.microsoft.com/en-us/documentation/articles/notification-hubs-chrome-get-started/
 [Safari]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari
 
 <!-- SDK -->

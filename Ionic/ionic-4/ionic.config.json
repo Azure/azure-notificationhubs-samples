@@ -1,0 +1,8 @@
+{
+  "name": "ionic-4-push-sample",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "com.somecompany.ionicpush"
+}

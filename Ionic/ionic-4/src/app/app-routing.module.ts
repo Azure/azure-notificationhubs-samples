@@ -4,8 +4,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  // { path: 'notification-event', loadChildren: './notification-event/notification-event.module#NotificationEventPageModule' },
-  // { path: 'registration-event', loadChildren: './registration-event/registration-event.module#RegistrationEventPageModule' },
   { path: 'notification/:idx', loadChildren: './notification-event/notification-event.module#NotificationEventPageModule' },
   { path: 'registration/:idx', loadChildren: './registration-event/registration-event.module#RegistrationEventPageModule' },
 ];

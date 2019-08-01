@@ -19,12 +19,12 @@ npm-debug.log*
 .tmp/
 .versions/
 coverage/
-# www/
+www/
 node_modules/
 tmp/
 temp/
-# android/
-# ios/
+android/
+ios/
 $RECYCLE.BIN/
 
 .DS_Store

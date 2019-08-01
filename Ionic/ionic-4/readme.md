@@ -54,6 +54,8 @@ export const config = {
 
 Populate the file's `hubName` and `hubConnectionString` values with the appropriate values from your Azure Notification Hubs configuration.
 
+> This sample is provided as-is; it's designed to simply illustrate one possible way to use ANH with Ionic 4. Apache Cordova, Ionic, and third-party plugin developers release periodic updates which may break this sample - if you encounter a breaking change, please follow normal troubleshooting procedures to update the associated frameworks in order to fix the issues. As this project is published as open source, we're more than happy to accept pull requests with fixes.
+
 ## Running the Application
 
 Run the app by executing `ionic cap run android`. If you receive an error about a Cordova plugin missing, run `npm install`, then try again.

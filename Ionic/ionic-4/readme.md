@@ -1,8 +1,6 @@
 # Azure Notification Hubs Ionic 4 Sample
 
-This repository contains a sample [Ionic 4](https://ionicframework.com/) application that works with [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/) (ANH). This app is a port of the [Ionic 3](https://github.com/jwargo/azure-notification-hubs-ionic3-sample) sample application (using Ionic 4 and Capacitor instead of Ionic 3 and Apache Cordova).
-
-The ANH SDK doesn't provide direct support for Ionic apps, so this sample uses the third-party [cordova-azure-notification-hubs](https://www.npmjs.com/package/cordova-azure-notification-hubs) plugin. The plugin's a Cordova plugin, and Capacitor supports *most* Cordova plugins, but there's some extra steps you'll have to do to make this work since Capacitor doesn't process the Cordova plugin lifecycle events.
+This repository contains a sample [Ionic 4](https://ionicframework.com/) application that works with [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/) (ANH). The ANH SDK doesn't provide direct support for Ionic apps, so this sample uses the third-party [cordova-azure-notification-hubs](https://www.npmjs.com/package/cordova-azure-notification-hubs) plugin.
 
 ## Project Setup
 
@@ -18,7 +16,7 @@ Execute the following command to create and populate the project's `www` folder 
 ionic build
 ```
 
-Next, add Capacitor to the project by executing the commands listed below. When prompted for the project's `appID` during the first command below, enter the Firebase App Package Name for this project (from the Firebase console).
+Next, add Capacitor to the project by executing the commands listed below. When prompted for the project's `appID` during the first command below, enter the Firebase App Package Name for this project (from your Push project in the Firebase console).
 
 ```shell
 npx cap init

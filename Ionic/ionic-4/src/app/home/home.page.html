@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Azure Notification Hubs (Ionic 4) </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header no-padding>
+      {{ eventList.length ? 'Events': 'Waiting for registration' }}
+    </ion-list-header>
+    <ion-item (click)="viewEvent(event, idx)" *ngFor="let event of eventList; let idx= index" no-padding>
+      <ion-label text-wrap>
+        <h2>{{ event.type == 1 ? 'Notification': 'Event' }}</h2>
+        <p>{{ event.received }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

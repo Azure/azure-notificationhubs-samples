@@ -1,0 +1,7 @@
+{
+  "appId": "com.jwargo.ionicpush",
+  "appName": "ionic-4-push-sample",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

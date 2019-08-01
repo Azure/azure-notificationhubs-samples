@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Azure Notification Hubs (Ionic 4)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header no-padding>
+      Notification Event
+    </ion-list-header>
+    <ion-item text-wrap no-padding>
+      <ion-label text-wrap>
+        <h2>Received</h2>
+        <p>{{event.received}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.title">
+      <ion-label text-wrap>
+        <h2>Title</h2>
+        <p>{{event.title}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.subtitle">
+      <ion-label text-wrap>
+        <h2>Subtitle</h2>
+        <p>{{event.subtitle}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.body">
+      <ion-label text-wrap>
+        <h2>Body</h2>
+        <p>{{event.body}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.badge">
+      <ion-label text-wrap>
+        <h2>Badge</h2>
+        <p>{{event.badge}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.notification">
+      <ion-label text-wrap>
+        <h2>Notification</h2>
+        <p>{{event.notification}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.data">
+      <ion-label text-wrap>
+        <h2>Data</h2>
+        <p>{{event.data}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.click_action">
+      <ion-label text-wrap>
+        <h2>Click Action</h2>
+        <p>{{event.click_action}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding *ngIf="event.link">
+      <ion-label text-wrap>
+        <h2>Link</h2>
+        <p>{{event.link}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

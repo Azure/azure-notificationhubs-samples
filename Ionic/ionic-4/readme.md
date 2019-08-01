@@ -52,11 +52,11 @@ export const config = {
 };
 ```
 
-Populate the file's `hubName` and `hubConnectionString` values with the appropriate values from your Azure configuration.
+Populate the file's `hubName` and `hubConnectionString` values with the appropriate values from your Azure Notification Hubs configuration.
 
 ## Running the Application
 
-Run the app by executing `ionic cap run android`. If you get an error about a Cordova plugin missing, run `npm install`, then try again.
+Run the app by executing `ionic cap run android`. If you receive an error about a Cordova plugin missing, run `npm install`, then try again.
 
 When you run the application, the app's home screen displays a list of the Azure Notification Hubs events that occur while the app runs. On startup, the app registers with ANH, so the first event you'll see every time is the Registration event.
 

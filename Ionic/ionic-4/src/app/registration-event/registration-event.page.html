@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Azure Notification Hubs (Ionic 4)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header no-padding>
+      <h1>Registration</h1>
+    </ion-list-header>
+    <ion-item text-wrap no-padding>
+      <ion-label text-wrap>
+        <h2>Registration ID</h2>
+        <p>{{event.registrationId}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding>
+      <ion-label text-wrap>
+        <h2>Azure Registration ID</h2>
+        <p>{{event.azureRegId}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item text-wrap no-padding>
+      <ion-label text-wrap>
+        <h2>Received</h2>
+        <p>{{event.received}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

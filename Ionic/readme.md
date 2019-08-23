@@ -4,6 +4,8 @@ Many of our customers use the [Ionic Framework](https://ionicframework.com/) for
 
 This section of the repository contains sample apps for Ionic 3 and Ionic 4.
 
+> **Note:** This sample is provided as-is; it was created to illustrate one possible way to use Azure Notification Hubs with Ionic. Ionic and third-party plugin developers release periodic updates which may break this sample - if you encounter a breaking change, please follow normal troubleshooting procedures to update the associated frameworks in order to fix the issues. As this project is published as open source, we're more than happy to accept pull requests with fixes.
+
 The Apache Cordova-based Ionic 3 sample uses the [cordova-azure-notification-hubs](https://github.com/derek82511/cordova-azure-notification-hubs) plugin directly to manage registering for notifications and processing notifications when they arrive on the device.
 
 With Ionic 4, the Ionic team added support for [Capacitor](https://capacitor.ionicframework.com/) their Cordova replacement. Capacitor includes its own Push plugin, so this sample uses the cordova-azure-notification-hubs plugin (Capacitor is compatible with many Cordova plugins) as well as the built-in Capacitor Push plugin. This means that the Ionic 4 sample is a little different than the Ionic 3 version, so please pay special attention to which approach you're using.

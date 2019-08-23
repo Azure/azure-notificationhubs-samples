@@ -2,6 +2,8 @@
 
 This repository contains a sample [Ionic 4](https://ionicframework.com/) application that works with [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/) (ANH). The ANH SDK doesn't provide direct support for Ionic apps, so this sample uses the third-party [cordova-azure-notification-hubs](https://www.npmjs.com/package/cordova-azure-notification-hubs) plugin.
 
+> **Note:** This sample is provided as-is; it was created to illustrate one possible way to use Azure Notification Hubs with Ionic 4. Ionic and third-party plugin developers release periodic updates which may break this sample - if you encounter a breaking change, please follow normal troubleshooting procedures to update the associated frameworks in order to fix the issues. As this project is published as open source, we're more than happy to accept pull requests with fixes.
+
 ## Project Setup
 
 To start, clone the repository, then open a terminal window, navigate to the cloned project folder, and execute the following command:

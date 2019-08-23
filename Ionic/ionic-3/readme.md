@@ -2,6 +2,8 @@
 
 This repository contains a sample [Ionic 3](https://ionicframework.com/) application that works with [Azure Notification Hubs](https://azure.microsoft.com/en-us/services/notification-hubs/) (ANH). The ANH SDK doesn't provide direct support for Ionic apps, so this sample uses the third-party [cordova-azure-notification-hubs](https://www.npmjs.com/package/cordova-azure-notification-hubs) plugin.
 
+> **Note:** This sample is provided as-is; it was created to illustrate one possible way to use Azure Notification Hubs with Ionic 3. Apache Cordova, Ionic, and third-party plugin developers release periodic updates which may break this sample - if you encounter a breaking change, please follow normal troubleshooting procedures to update the associated frameworks in order to fix the issues. As this project is published as open source, we're more than happy to accept pull requests with fixes.
+
 To start, clone the repository, then open a terminal window, navigate to the cloned project folder, and execute the following command:
 
 ```shell
@@ -22,8 +24,6 @@ export const config = {
 Populate the file's `hubName` and `hubConnectionString` values with the appropriate values from your Azure configuration.
 
 >Note: For Android, you must copy your Firebase project's Cloud Messaging configuration file (`google-services.json`) to the appropriate folder in your project's Android project folder. There's also push configuration steps you'll have to complete in Xcode for your project as well.
-
-This sample is provided as-is; it's designed to simply illustrate one possible way to use ANH with Ionic 3. Apache Cordova, Ionic, and third-party plugin developers release periodic updates which may break this sample - if you encounter a breaking change, please follow normal troubleshooting procedures to update the associated frameworks in order to fix the issues. As this project is published as open source, we're more than happy to accept pull requests with fixes.
 
 When you run the application, the app's home screen displays a list of the Azure Notification Hubs events that occur while the app runs. On startup, the app registers with ANH, so the first event you'll see every time is the Registration event. When notifications arrive, the event list updates and the title and message from the notification display in an alert dialog as shown in the following figure.
 

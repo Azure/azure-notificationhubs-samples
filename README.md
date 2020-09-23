@@ -44,13 +44,13 @@ This is a sample for sending notifications to Notification Hubs using PHP.
 This is a sample for sending notifications to Notification Hubs using Python.
 
 <!-- Sample Apps -->
-[Flutter]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/flutter
-[Apache Cordova]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/apache-cordova
-[Ionic]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/Ionic
+[Flutter]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/flutter
+[Apache Cordova]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/apache-cordova
+[Ionic]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/Ionic
 
 <!-- Push Apps -->
-[Safari]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari
+[Safari]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/PushToSafari
 
 <!-- SDK -->
-[PHP SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
-[Python SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
+[PHP SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/notificationhubs-rest-php
+[Python SDK]: https://github.com/Azure/azure-notificationhubs-samples/tree/main/notificationhubs-rest-python

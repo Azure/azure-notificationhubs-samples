@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:app"
+    xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting">
+
+    <Style TargetType="local:CustomGraphControl" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:CustomGraphControl">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <charting:Chart>
+                            <charting:Chart.Series>
+                                <charting:LineSeries 
+                                    ItemsSource="{Binding DataSet, RelativeSource={RelativeSource TemplatedParent}}" 
+                                    IndependentValuePath="Timestamp" 
+                                    DependentValuePath="NotificationsSent">
+                                    <charting:LineSeries.DependentRangeAxis>
+                                        <charting:LinearAxis Minimum="0" Orientation="Y" ShowGridLines="True"/>
+                                    </charting:LineSeries.DependentRangeAxis>
+                                </charting:LineSeries>
+                            </charting:Chart.Series>
+                        </charting:Chart>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

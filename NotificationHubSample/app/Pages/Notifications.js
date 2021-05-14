@@ -163,7 +163,6 @@ const Notifications = ({ navigation, content }) => {
                             <Image source={(notification.type === 'survey') ? require('./Icons/note_title.png') : require('./Icons/news.png')} style={{ width: 14, height: 14, marginRight: 7, alignSelf: 'center' }} />
                             <Text style={{ color: (notification.type === 'survey') ? '#FF9D42' : '#43A2FA', display: 'flex', alignSelf: 'flex-start', fontSize: 12, fontWeight: '700' }}>{notification.type}</Text>
                           </View>
-                          {/* <Text style={{ color: '#7553A9', display: 'flex', right: 10, top: 10, position: 'absolute', fontSize: 12, fontWeight: '500' }}>Shared with: {notification?.users?.map((user) => (<Text key={user.id}>{user.userName},</Text>))}, {notification?.surveyGroups?.map((group) => (<Text>{group.groupName},</Text>))}</Text> */}
                           <Text style={{ color: '#666666', fontSize: 14, fontWeight: '600', marginTop: 9 }}>{notification.notificationTitle}</Text>
                           <Text style={{ color: '#666666', fontSize: 13, fontWeight: '400' }}>{notification.notificationDescription}</Text>
                         </View>)
@@ -261,8 +260,7 @@ const Notifications = ({ navigation, content }) => {
                       <Image source={(selectedNotification?.type === 'survey') ? require('./Icons/note_title.png') : require('./Icons/news.png')} style={{ width: 18, height: 18, marginRight: 7, alignSelf: 'center' }} />
                       <Text style={{ color: (selectedNotification?.type === 'survey') ? '#FF9D42' : '#43A2FA', display: 'flex', alignSelf: 'flex-start', fontSize: 16, fontWeight: '700' }}>{selectedNotification?.notificationTitle}</Text>
                       <Text style={{ color: '#999999', fontWeight: '600', fontSize: 11, display: 'flex', position: 'absolute', right: 0, top: 4 }}>{(new Date(selectedNotification?.sentTime))?.toLocaleTimeString()}</Text>
-                    </View>
-                    {/* <Text style={{ color: '#7553A9', fontSize: 12, fontWeight: '400', marginTop: 9 }}>Shared: {this.state.selectedNotification.sharedWith}</Text> */}
+                    </View>                    
                     <Text style={{ color: '#999999', fontWeight: '600', fontSize: 12 }}>{(new Date(selectedNotification?.sentTime))?.toLocaleDateString()}</Text>
                     <ScrollView style={{ marginTop: 24, marginBottom: 65 }}>
                       <Text style={{ color: '#333333', fontWeight: '400', fontSize: 13 }}>{selectedNotification?.notificationDescription}</Text>
@@ -284,7 +282,6 @@ const Notifications = ({ navigation, content }) => {
                           <Text style={{ color: (notification.type === 'survey') ? '#FF9D42' : '#43A2FA', display: 'flex', alignSelf: 'flex-start', fontSize: 14, fontWeight: '700' }}>{notification.notificationTitle}</Text>
                         </View>
                         <Text style={{ color: '#999999', fontWeight: '600', fontSize: 11, position: 'absolute', right: 10, top: 10, display: 'flex' }}>{(new Date(notification.sentTime)).toLocaleTimeString()}</Text>
-                        {/* <Text style={{ color: '#7553A9', fontSize: 12, fontWeight: '400', marginTop: 9 }}>Shared with: {notification.sharedWith}</Text> */}
                         <Text style={{ color: '#999999', fontWeight: '600', fontSize: 12 }}>{notification.notificationDescription}</Text>
                       </View>)
                     )}
@@ -298,7 +295,6 @@ const Notifications = ({ navigation, content }) => {
                       <Text style={{ color: (selectedNotification?.type === 'survey') ? '#FF9D42' : '#43A2FA', display: 'flex', alignSelf: 'flex-start', fontSize: 16, fontWeight: '700' }}>{selectedNotification?.notificationTitle}</Text>
                       <Text style={{ color: '#999999', fontWeight: '600', fontSize: 11, display: 'flex', position: 'absolute', right: 0, top: 4 }}>{(new Date(selectedNotification?.sentTime))?.toLocaleTimeString()}</Text>
                     </View>
-                    {/* <Text style={{ color: '#7553A9', fontSize: 12, fontWeight: '400', marginTop: 9 }}>Shared: {this.state.selectedNotification.sharedWith}</Text> */}
                     <Text style={{ color: '#999999', fontWeight: '600', fontSize: 12 }}>{(new Date(selectedNotification?.sentTime))?.toLocaleDateString()}</Text>
                     <ScrollView style={{ marginTop: 24, marginBottom: 65 }}>
                       <Text style={{ color: '#333333', fontWeight: '400', fontSize: 13 }}>{selectedNotification?.notificationDescription}</Text>

@@ -25,8 +25,7 @@ import {
   removeUserFromGroup,
 } from '../data/reducers/group-management.reducer';
 
-//const Groups = function () {
-// function Groups(){
+
 const Groups = ({ navigation }) => {
   const dispatch = useDispatch();
 
@@ -188,12 +187,7 @@ const Groups = ({ navigation }) => {
             <Text style={userTableStyle.textDark}>
               {rowData.item.applicationUsers.length}
             </Text>
-          </View>
-          {/* <View style={userTableStyle.cell3}>
-            <Text style={userTableStyle.textDark}>
-              {rowData.item.mobile_number}
-            </Text>
-          </View> */}
+          </View>         
           <View
             style={[
               userTableStyle.cell4,

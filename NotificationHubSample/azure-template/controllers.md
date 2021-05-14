@@ -1,6 +1,6 @@
-1) To authicate logged in user we are doing basic authication using below methods.
+1) To authenticate logged in user we are doing basic authication using below methods.
 ---------------------------------------------------------------------------
-```
+```C#
     [HttpPost]
     [Route("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -80,7 +80,7 @@
 ```
 2) Dashboard controller is used to return all notification information.
 ------------------------------------------------------------------------
-```
+```C#
 public class DashboardInsight
 {
     public int TotalNotificationsSent { get; set; }

@@ -196,8 +196,7 @@ const Users = ({ navigation }) => {
       </TouchableOpacity>
     );
   };
-  // export default class Users extends React.Component {
-  //   render() {
+   
   return (
     <View style={userStyles.parent}>
       <View

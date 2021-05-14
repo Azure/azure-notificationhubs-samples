@@ -272,25 +272,7 @@ const LoginScreen = ({ navigation }) => {
                   loginHandle(data.username, data.password);
                 }}
               />
-            </View>
-
-            {/* <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                margin: 8,
-                marginTop: 16,
-              }}>
-              <CheckBox
-                value={remMeCheckboxState}
-                disabled={false}
-                onValueChange={()=>{
-                    setRemMeCheckboxState(!remMeCheckboxState);
-                }}
-              />
-              <Text style={{ color: 'black' }}>Remember me</Text>
-            </View> */}
+            </View>            
           </View>
           {data.isLoading ? <View style={{
               width: '100%',

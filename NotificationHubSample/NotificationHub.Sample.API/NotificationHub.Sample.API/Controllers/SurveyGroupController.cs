@@ -1,8 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using NotificationHub.Sample.API.Database;
 using NotificationHub.Sample.API.Models.Authentication;
 using NotificationHub.Sample.API.Models.Groups;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace NotificationHub.Sample.API.Controllers
 {

@@ -1,6 +1,4 @@
 using Microsoft.Azure.NotificationHubs;
-using Microsoft.Extensions.Configuration;
-using System;
 
 namespace NotificationHub.Sample.API.Notifications
 {
@@ -12,7 +10,7 @@ namespace NotificationHub.Sample.API.Notifications
 
         private Notifications()
         {
-            Hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://notification-demo-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=swbdaupN+q88e1+rq7LgRtrinwkmql/iYRmvaa8SrFw=", "notification-hub-01");
+            Hub = NotificationHubClient.CreateClientFromConnectionString(Startup.AzureNotificationHubConnectionString,Startup.AzureNotificationHubNameSpace);
         }
     }
 }

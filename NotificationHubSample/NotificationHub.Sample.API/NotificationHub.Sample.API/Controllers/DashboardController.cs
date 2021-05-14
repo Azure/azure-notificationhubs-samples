@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using NotificationHub.Sample.API.Database;
 using NotificationHub.Sample.API.Models.Dashboard;
-using NotificationHub.Sample.API.Models.Notifications;
 using NotificationHub.Sample.API.Services.Notifications;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;

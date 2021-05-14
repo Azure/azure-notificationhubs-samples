@@ -7,8 +7,6 @@ import {
 
 import styles from '../Styles/styles';
 
-//const SettingsScreen = function () {
-// function SettingsScreen(){
     export default class SettingsScreen extends React.Component {
         render() {
     return (
@@ -22,4 +20,3 @@ import styles from '../Styles/styles';
     SettingsScreen.propTypes = {
         zoomEnabled: PropTypes.bool
       };
-//   module.export=SettingsScreen;

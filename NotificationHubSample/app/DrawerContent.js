@@ -120,82 +120,6 @@ export default function DrawerContent(props) {
                 props.navigation.navigate('Statistics');
               }}
             />
-            {/* <DrawerItem
-            activeBackgroundColor='#6A499E'
-            focused={getActiveRouteState(
-              props.state.routes,
-              props.state.index,
-              'CreateGroup'
-            )}
-              icon={({ color, size }) => (
-                <Image
-                  style={styles.Imageitem}
-                  source={require('./Pages/Icons/add-group.png')}
-                />
-              )}
-              labelStyle={styles.labelStyle}
-              label="Create Group"
-              onPress={() => {
-                props.navigation.navigate('CreateGroup');
-              }}
-            />
-            <DrawerItem
-            activeBackgroundColor='#6A499E'
-            focused={getActiveRouteState(
-              props.state.routes,
-              props.state.index,
-              'CreateUser'
-            )}
-              icon={({ color, size }) => (
-                <Image
-                  style={styles.Imageitem}
-                  source={require('./Pages/Icons/add-friend.png')}
-                />
-              )}
-              labelStyle={styles.labelStyle}
-              label="Create User"
-              onPress={() => {
-                props.navigation.navigate('CreateUser');
-              }}
-            />
-            <DrawerItem
-            activeBackgroundColor='#6A499E'
-            focused={getActiveRouteState(
-              props.state.routes,
-              props.state.index,
-              'Submission'
-            )}
-              icon={({ color, size }) => (
-                <Image
-                  style={styles.Imageitem}
-                  source={require('./Pages/Icons/Submission.png')}
-                />
-              )}
-              labelStyle={styles.labelStyle}
-              label="Submission"
-              onPress={() => {
-                props.navigation.navigate('Submission');
-              }}
-            />
-            <DrawerItem
-            activeBackgroundColor='#6A499E'
-            focused={getActiveRouteState(
-              props.state.routes,
-              props.state.index,
-              'Settings'
-            )}
-              icon={({ color, size }) => (
-                <Image
-                  style={styles.Imageitem}
-                  source={require('./Pages/Icons/settings.png')}
-                />
-              )}
-              labelStyle={styles.labelStyle}
-              label="Settings"
-              onPress={() => {
-                props.navigation.navigate('SettingsScreen');
-              }}
-            /> */}
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>
@@ -210,7 +134,6 @@ export default function DrawerContent(props) {
               labelStyle={styles.labelStyle}
               label="Sign Out"
           onPress={() => {
-            //console.log('onPress');
             dispatch(logoutUser());
           }}
         />

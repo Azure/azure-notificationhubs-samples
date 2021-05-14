@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { decode } from 'jsonwebtoken';
 import { constants } from '../../config';
 import { api, success, error } from './services.common';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -12,20 +11,8 @@ export const checkLoginAPI = async () => {
     };
   } else {
     // check if token is expired
-    // let jsonToken = decode(token);
-    // if (jsonToken.exp < (new Date().getTime() + 1) / 1000) {
-    //   return {
-    //     loggedIn: false,
-    //   };
-    // } else {
-    //   return {
-    //     loggedIn: true,
-    //     userName: await AsyncStorage.getItem(constants.KEY_USER_NAME),
-    //   };
-    // }
     return {
-      loggedIn: true,
-      // userName: await AsyncStorage.getItem(constants.KEY_USER_NAME),
+      loggedIn: true,      
     };
   }
 };
@@ -40,8 +27,7 @@ export const loginAuthenticationAPI = async (username, password) => {
 
     // save token
     await AsyncStorage.setItem(constants.KEY_AUTH_TOKEN, credentials.token);
-    // await AsyncStorage.setItem(constants.KEY_USER_NAME, credentials.userName);
-
+    
     return success(credentials);
   } catch (e) {
     console.log(e);

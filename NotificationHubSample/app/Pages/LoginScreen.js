@@ -175,10 +175,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={() => {
               loginHandle(data.username, data.password);
             }}>
-            <Text style={[styles.textSign]}>Sign In</Text>
-            {/* <View style={styles.signIn}>
-              
-            </View> */}
+            <Text style={[styles.textSign]}>Sign In</Text>            
           </TouchableOpacity>
         </View>
       </Animatable.View>
@@ -232,8 +229,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   textInput: {
-    flex: 1,
-    //marginTop: Platform.OS === 'ios' ? 0 : -12,
+    flex: 1,    
     backgroundColor: '#fff',
     borderColor: "gray",
   },

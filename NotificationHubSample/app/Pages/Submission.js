@@ -111,8 +111,7 @@ const Submission = ({ navigation }) => {
               <TouchableOpacity
                 onPress={() => handleDelete(t)}
               >
-                <FontAwesome name='times' color='#000000' />
-                {/* <Image style={{ resizeMode: 'contain', height: 10, width: 10, marginHorizontal: 5, paddingVertical: 0 }} source={require('./Icons/close.png')} /> */}
+                <FontAwesome name='times' color='#000000' />                
               </TouchableOpacity>
             </View>
           );
@@ -202,14 +201,7 @@ const Submission = ({ navigation }) => {
             style={LocalStyles.textboxdes}
             defaultValue={notificationDraft.notificationDescription}
             onChangeText={setTextd}
-          />
-          {/* <TouchableOpacity style={{ flexDirection: 'row', backgroundColor: '#9E9EB3', alignSelf: 'flex-start' }}
-            onPress={() => attachimage()} >
-            <View style={{ flexDirection: 'row', justifyContent: 'center', borderColor: 'white', borderRightWidth: 0.5 }}>
-              <Text style={{ textAlignVertical: 'center', margin: 5, fontWeight: '600', fontSize: 13 }}>Attach Image</Text>
-            </View>
-            <Image style={{ resizeMode: 'contain', height: 16, width: 16, margin: 7 }} source={require('./Icons/Attach.png')} />
-          </TouchableOpacity> */}
+          />      
 
           {notificationDraft?.type === 'survey' ?
             <View>

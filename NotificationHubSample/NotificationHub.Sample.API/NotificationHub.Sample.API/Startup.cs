@@ -1,27 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using NotificationHub.Sample.API.Database;
 using NotificationHub.Sample.API.Models.Authentication;
 using NotificationHub.Sample.API.Models.Notifications;
 using NotificationHub.Sample.API.Services.Notifications;
+using System;
+using System.Text;
 
 namespace NotificationHub.Sample.API
 {
@@ -33,6 +25,8 @@ namespace NotificationHub.Sample.API
         }
 
         public IConfiguration Configuration { get; }
+        public static string AzureNotificationHubConnectionString { get; private set; }
+        public static string AzureNotificationHubNameSpace { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -42,6 +36,9 @@ namespace NotificationHub.Sample.API
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
 
+            // For Azure Notification Service
+            AzureNotificationHubConnectionString = Configuration.GetConnectionString("AzureNotificationHub");
+            AzureNotificationHubNameSpace = Configuration["AzureNotificationHubNameSpace"];
             // For Entity Framework  
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLServerConnectionString")));
 

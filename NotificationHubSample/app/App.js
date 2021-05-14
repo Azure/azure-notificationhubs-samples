@@ -206,7 +206,6 @@ const AppWrapper = () => {
 };
 
 const NavigationDrawerStructure = ({ navigation }) => {
-  //console.log(navigation);
 
   return (
     <View style={{ flexDirection: 'row' }}>

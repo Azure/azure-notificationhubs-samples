@@ -1,4 +1,4 @@
-﻿using Microsoft.Azure.NotificationHubs;
+using Microsoft.Azure.NotificationHubs;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NotificationHub.Sample.API.Models;
@@ -6,7 +6,6 @@ using NotificationHub.Sample.API.Models.Dashboard;
 using NotificationHub.Sample.API.Models.Notifications;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -155,8 +154,7 @@ namespace NotificationHub.Sample.API.Services.Notifications
         {
             var sendTasks = new Task[]
             {
-                _hub.SendFcmNativeNotificationAsync(androidPayload, token),
-                //_hub.SendAppleNativeNotificationAsync(iOSPayload, token)
+                _hub.SendFcmNativeNotificationAsync(androidPayload, token)                
             };
 
             return Task.WhenAll(sendTasks);
@@ -166,8 +164,7 @@ namespace NotificationHub.Sample.API.Services.Notifications
         {
             var sendTasks = new Task[]
             {
-                _hub.SendFcmNativeNotificationAsync(androidPayload, tags, token),
-                //_hub.SendAppleNativeNotificationAsync(iOSPayload, tags, token)
+                _hub.SendFcmNativeNotificationAsync(androidPayload, tags, token)
             };
 
             return Task.WhenAll(sendTasks);

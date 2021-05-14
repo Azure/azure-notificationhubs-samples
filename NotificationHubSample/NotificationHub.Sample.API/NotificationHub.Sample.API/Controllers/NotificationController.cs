@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.NotificationHubs.Messaging;
+using Microsoft.EntityFrameworkCore;
+using NotificationHub.Sample.API.Database;
+using NotificationHub.Sample.API.Models.Notifications;
+using NotificationHub.Sample.API.Services.Notifications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,17 +13,6 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Azure.NotificationHubs;
-using Microsoft.Azure.NotificationHubs.Messaging;
-using Microsoft.EntityFrameworkCore;
-using NotificationHub.Models.Notifications;
-using NotificationHub.Sample.API.Database;
-using NotificationHub.Sample.API.Models.Notifications;
-using NotificationHub.Sample.API.Services.Notifications;
 
 namespace NotificationHub.Sample.API.Controllers
 {

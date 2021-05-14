@@ -1,5 +1,5 @@
 1) To call any backend API you need to first create service like notification.service.js, which will make actual API call.
-```
+```javascript
 export const sendNotificationAPI = async (userInfo) => {
   let url = `${api}notification/send`;
   let authHeader = await getAuthHeaders();
@@ -13,7 +13,7 @@ export const getNotificationsAPI = async () => {
 };
 ```
 2) To the service you need to create reducer,like notification.reducer.js
-```
+```javascript
 export const getNotifications = createAsyncThunk(
   'notification/getNotifications',
   async (payload, thunkAPI) => {
@@ -62,7 +62,7 @@ export default notificationSlice.reducer;
 `import { getNotifications, sendNotification } from '../data/reducers/notification.reducer';`
 
 You can write below code to call reducer API for sending and gettting notications.
-```
+```javascript
   const postNotification = async () => {
     console.log('sending notification...');
     setLoading(true);

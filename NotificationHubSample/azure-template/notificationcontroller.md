@@ -1,7 +1,7 @@
 
 Notification controller is used to send and get notification.
 ----------------------------------------------------------------------
-```
+```C#
 [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("send")]

@@ -37,7 +37,7 @@ namespace NotificationHub.Sample.API.Controllers
         {
             try
             {
-                List<string> tags = new List<string>();
+                var tags = new List<string>();
 
                 // attach survey group and user information with notificationMessage
                 notificationMessage.SurveyGroupTags.ForEach(surveyGroupId =>
@@ -62,7 +62,11 @@ namespace NotificationHub.Sample.API.Controllers
                 _db.NotificationMessages.Add(notificationMessage);
 
                 // send template notification
-                var notification = new Dictionary<string, string>();
+                var notification = new Dictionary<string, string>
+                {
+                    { "title", notificationMessage.NotificationTitle },
+                    { "message", notificationMessage.NotificationDescription }
+                };
                 notification.Add("title", notificationMessage.NotificationTitle);
                 notification.Add("message", notificationMessage.NotificationDescription);
 
@@ -108,7 +112,6 @@ namespace NotificationHub.Sample.API.Controllers
 
             // find groups associated
             var groupsForUser = _db.SurveyGroups.Where(group => group.ApplicationUsers.Where(user => user.UserName == username).FirstOrDefault() != null).ToList();
-
             foreach (var group in groupsForUser)
             {
                 tags.Add("group:" + group.GroupName.Replace(' ', '-'));
@@ -138,13 +141,15 @@ namespace NotificationHub.Sample.API.Controllers
 
         private static void ReturnGoneIfHubResponseIsGone(MessagingException e)
         {
-            var webex = e.InnerException as WebException;
-            if (webex.Status == WebExceptionStatus.ProtocolError)
+            if(e.InnerException is WebException webex)
             {
-                var response = (HttpWebResponse)webex.Response;
-                if (response.StatusCode == HttpStatusCode.Gone)
-                    throw new HttpRequestException(HttpStatusCode.Gone.ToString());
-            }
+                if (webex.Status == WebExceptionStatus.ProtocolError)
+                {
+                    var response = (HttpWebResponse)webex.Response;
+                    if (response.StatusCode == HttpStatusCode.Gone)
+                        throw new HttpRequestException(HttpStatusCode.Gone.ToString());
+                }
+            }            
         }
     }
 }

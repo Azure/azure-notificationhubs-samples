@@ -255,14 +255,6 @@ const Statistics = () => {
               />
               <Text style={styles.deviceSectionText}>{dashboardInsight?.deviceTrends?.find(t => t.deviceType === 'Android')?.registrationCount + ' Android'}</Text>
             </View>
-
-            {/* <View style={styles.deviceSectionCard}>
-              <Image
-                style={styles.deviceSectionIcon}
-                source={require('./Icons/windows.png')}
-              />
-              <Text style={styles.deviceSectionText}>{dashboardInsight?.deviceTrends?.find(t => t.deviceType === 'Windows')?.registrationCount + ' Windows'}</Text>
-            </View> */}
           </View>
         </View>
       </View>

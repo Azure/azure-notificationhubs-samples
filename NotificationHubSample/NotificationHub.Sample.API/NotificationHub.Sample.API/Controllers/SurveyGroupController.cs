@@ -19,13 +19,13 @@ namespace NotificationHub.Sample.API.Controllers
     [ApiController]
     public class SurveyGroupController : ControllerBase
     {
-        private readonly ApplicationDbContext db;
-        private NotificationHubClient hub;
+        private readonly ApplicationDbContext _db;
+        private NotificationHubClient _hub;
 
-        public SurveyGroupController(ApplicationDbContext _dbContext)
+        public SurveyGroupController(ApplicationDbContext dbContext)
         {
-            db = _dbContext;
-            hub = Notifications.Notifications.Instance.Hub;
+            _db = dbContext;
+            _hub = Notifications.Notifications.Instance.Hub;
         }
 
         [Produces("application/json")]
@@ -35,11 +35,11 @@ namespace NotificationHub.Sample.API.Controllers
         {
             try
             {
-                db.SurveyGroups.Add(surveyGroup);
-                await db.SaveChangesAsync();
+                _db.SurveyGroups.Add(surveyGroup);
+                await _db.SaveChangesAsync();
                 return Ok(surveyGroup);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -51,11 +51,11 @@ namespace NotificationHub.Sample.API.Controllers
         {
             try
             {
-                var surveyGroups = db.SurveyGroups.Include(group => group.ApplicationUsers).ToList();
+                var surveyGroups = _db.SurveyGroups.Include(group => group.ApplicationUsers).ToList();
                 surveyGroups.ForEach(group => group.ApplicationUsers.ForEach(user => group.ApplicationUserIds.Add(user.Id)));
                 return Ok(surveyGroups);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -68,10 +68,10 @@ namespace NotificationHub.Sample.API.Controllers
             try
             {
 
-                var client = db.SurveyGroups.Find(id);
+                var client = _db.SurveyGroups.Find(id);
                 return Ok(client);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest();
             }
@@ -92,12 +92,12 @@ namespace NotificationHub.Sample.API.Controllers
                     username = identity.FindFirst(ClaimTypes.Name).Value;
                 }
 
-                var existingGroup = await db.SurveyGroups.Include(group => group.ApplicationUsers).Where(group => group.Id == surveyGroup.Id).FirstOrDefaultAsync();
+                var existingGroup = await _db.SurveyGroups.Include(group => group.ApplicationUsers).Where(group => group.Id == surveyGroup.Id).FirstOrDefaultAsync();
 
                 existingGroup.GroupName = surveyGroup.GroupName;
 
                 // update associated users
-                var users = db.Users.Where(user => surveyGroup.ApplicationUserIds.Contains(user.Id)).ToList();
+                var users = _db.Users.Where(user => surveyGroup.ApplicationUserIds.Contains(user.Id)).ToList();
 
                 // remove users which have been removed from the group
                 List<ApplicationUser> usersToRemove = new List<ApplicationUser>();
@@ -116,11 +116,11 @@ namespace NotificationHub.Sample.API.Controllers
                 {
                     if (!string.IsNullOrEmpty(user.RegistrationId))
                     {
-                        var registrationDescription = await hub.GetRegistrationAsync<RegistrationDescription>(user.RegistrationId);
+                        var registrationDescription = await _hub.GetRegistrationAsync<RegistrationDescription>(user.RegistrationId);
                         if (registrationDescription.Tags.Contains($"group:{existingGroup.GroupName.Replace(' ', '-')}"))
                         {
                             registrationDescription.Tags.Remove($"group:{existingGroup.GroupName.Replace(' ', '-')}");
-                            await hub.CreateOrUpdateRegistrationAsync(registrationDescription);
+                            await _hub.CreateOrUpdateRegistrationAsync(registrationDescription);
                         }
                     }
                 }
@@ -138,20 +138,20 @@ namespace NotificationHub.Sample.API.Controllers
                 {
                     if (!string.IsNullOrEmpty(user.RegistrationId))
                     {
-                        var registrationDescription = await hub.GetRegistrationAsync<RegistrationDescription>(user.RegistrationId);
+                        var registrationDescription = await _hub.GetRegistrationAsync<RegistrationDescription>(user.RegistrationId);
                         if (!registrationDescription.Tags.Contains($"group:{existingGroup.GroupName.Replace(' ','-')}"))
                         {
                             registrationDescription.Tags.Add($"group:{existingGroup.GroupName.Replace(' ', '-')}");
-                            await hub.CreateOrUpdateRegistrationAsync(registrationDescription);
+                            await _hub.CreateOrUpdateRegistrationAsync(registrationDescription);
                         }
                     }
                 }
 
-                db.Entry(existingGroup).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                _db.Entry(existingGroup).State = EntityState.Modified;
+                await _db.SaveChangesAsync();
                 return Ok(existingGroup);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest();
             }

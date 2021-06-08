@@ -11,11 +11,11 @@ namespace NotificationHub.Sample.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDbContext db;
+        private readonly ApplicationDbContext _db;
 
-        public UsersController(ApplicationDbContext _dbContext)
+        public UsersController(ApplicationDbContext dbContext)
         {
-            db = _dbContext;
+            _db = dbContext;
         }
 
         [Produces("application/json")]
@@ -24,9 +24,9 @@ namespace NotificationHub.Sample.API.Controllers
         {
             try
             {
-                var users = db.Users.Include(user => user.SurveyGroups).ToList();
-                var userrolesmaster = db.Roles.ToList();
-                var userroles = db.UserRoles.ToList();
+                var users = _db.Users.Include(user => user.SurveyGroups).ToList();
+                var userrolesmaster = _db.Roles.ToList();
+                var userroles = _db.UserRoles.ToList();
 
                 foreach (var user in users)
                 {

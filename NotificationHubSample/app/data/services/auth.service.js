@@ -2,6 +2,7 @@ import axios from 'axios';
 import { constants } from '../../config';
 import { api, success, error } from './services.common';
 import AsyncStorage from '@react-native-community/async-storage';
+import jwt_decode from 'jwt-decode';
 
 export const checkLoginAPI = async () => {
   let token = await AsyncStorage.getItem(constants.KEY_AUTH_TOKEN);

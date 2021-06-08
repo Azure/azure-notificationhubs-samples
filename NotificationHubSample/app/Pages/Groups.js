@@ -263,12 +263,7 @@ const Groups = ({ navigation }) => {
             <Text style={[userTableStyle.textDark, userTableStyle.bold]}>
               # of Users
             </Text>
-          </View>
-          {/* <View style={userTableStyle.cell3}>
-          <Text style={[userTableStyle.textDark, userTableStyle.bold]}>
-            Mobile Number
-          </Text>
-        </View> */}
+          </View>         
           <View style={userTableStyle.cell4} />
         </View>
 

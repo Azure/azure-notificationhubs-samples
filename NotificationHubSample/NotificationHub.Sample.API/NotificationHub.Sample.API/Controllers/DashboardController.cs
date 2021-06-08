@@ -50,7 +50,7 @@ namespace NotificationHub.Sample.API.Controllers
                                                                 .GroupBy(m => WeekNumber(m.SentTime.Date))
                                                                 .Select(m => new NotificationTrend()
                                                                 {
-                                                                    Timestamp = FirstDateOfWeekISO8601(DateTime.Now.Year, m.Key).ToShortDateString(),
+                                                                    Timestamp = FirstDateOfWeekISO8601(DateTime.Now.Year, m.Key).DateTime.ToShortDateString(),
                                                                     NotificationsSent = m.Count()
                                                                 }).ToList();
                     }
@@ -77,16 +77,16 @@ namespace NotificationHub.Sample.API.Controllers
             return Ok(dashboardInsight);
         }
 
-        private DateTime FirstDateOfWeekISO8601(int year, int weekOfYear)
+        private DateTimeOffset FirstDateOfWeekISO8601(int year, int weekOfYear)
         {
-            DateTime jan1 = new DateTime(year, 1, 1);
+            DateTimeOffset jan1 = new DateTimeOffset(year, 1, 1, 0, 0, 0, TimeSpan.Zero);
             int daysOffset = DayOfWeek.Thursday - jan1.DayOfWeek;
 
             // Use first Thursday in January to get first week of the year as
             // it will never be in Week 52/53
-            DateTime firstThursday = jan1.AddDays(daysOffset);
+            DateTimeOffset firstThursday = jan1.AddDays(daysOffset);
             var cal = CultureInfo.CurrentCulture.Calendar;
-            int firstWeek = cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            int firstWeek = cal.GetWeekOfYear(firstThursday.DateTime, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
             var weekNum = weekOfYear;
             // As we're adding days to a date in Week 1,

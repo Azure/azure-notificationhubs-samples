@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,25 +19,27 @@ namespace NotificationHub.Sample.API.Controllers
     [ApiController]
     public class AuthenticateController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> userManager;
-        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
-
-        public AuthenticateController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        private readonly ISystemClock _systemClockService;
+        public AuthenticateController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, ISystemClock systemClockService)
         {
-            this.userManager = userManager;
-            this.roleManager = roleManager;
-            _configuration = configuration;
+            this._userManager = userManager;
+            this._roleManager = roleManager;
+            this._configuration = configuration;
+            this._systemClockService = systemClockService;
+  
         }
 
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var user = await userManager.FindByNameAsync(model.Username);
-            if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
+            var user = await _userManager.FindByNameAsync(model.UserName);
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
-                var userRoles = await userManager.GetRolesAsync(user);
+                var userRoles = await _userManager.GetRolesAsync(user);
 
                 var authClaims = new List<Claim>
                 {
@@ -54,21 +57,23 @@ namespace NotificationHub.Sample.API.Controllers
                 var token = new JwtSecurityToken(
                     issuer: _configuration["JWT:ValidIssuer"],
                     audience: _configuration["JWT:ValidAudience"],
-                    expires: DateTime.Now.AddHours(3),
+                    expires:  _systemClockService.UtcNow.UtcDateTime.AddHours(3),
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                     );
-
-                UserDetails userDetails = new UserDetails();
-                userDetails.FirstName = model.Username;
-                userDetails.LastName = model.Username;
-                userDetails.UserName = model.Username;
+                
+                var userDetails = new UserDetails
+                {
+                    FirstName = model.UserName,
+                    LastName = model.UserName,
+                    UserName = model.UserName
+                };
 
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo,
-                    username = model.Username,
+                    username = model.UserName,
                     email = user.Email,
                     role = userRoles != null ? userRoles[0] : "Site-Manager",
                     user = userDetails
@@ -81,7 +86,7 @@ namespace NotificationHub.Sample.API.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            var userExists = await userManager.FindByNameAsync(model.Username);
+            var userExists = await _userManager.FindByNameAsync(model.UserName);
             if (userExists != null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
 
@@ -89,18 +94,18 @@ namespace NotificationHub.Sample.API.Controllers
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Username
+                UserName = model.UserName
             };
-            var result = await userManager.CreateAsync(user, model.Password);
+            var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            if (!await roleManager.RoleExistsAsync(UserRoles.SiteManager))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.SiteManager));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.SiteManager))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.SiteManager));
 
-            if (await roleManager.RoleExistsAsync(UserRoles.SiteManager))
+            if (await _roleManager.RoleExistsAsync(UserRoles.SiteManager))
             {
-                await userManager.AddToRoleAsync(user, UserRoles.SiteManager);
+                await _userManager.AddToRoleAsync(user, UserRoles.SiteManager);
             }
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
@@ -110,7 +115,7 @@ namespace NotificationHub.Sample.API.Controllers
         [Route("register-admin")]
         public async Task<IActionResult> RegisterAdmin([FromBody] RegisterModel model)
         {
-            var userExists = await userManager.FindByNameAsync(model.Username);
+            var userExists = await _userManager.FindByNameAsync(model.UserName);
             if (userExists != null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
 
@@ -118,20 +123,20 @@ namespace NotificationHub.Sample.API.Controllers
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Username
+                UserName = model.UserName
             };
-            var result = await userManager.CreateAsync(user, model.Password);
+            var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-            if (!await roleManager.RoleExistsAsync(UserRoles.SiteManager))
-                await roleManager.CreateAsync(new IdentityRole(UserRoles.SiteManager));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.SiteManager))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.SiteManager));
 
-            if (await roleManager.RoleExistsAsync(UserRoles.Admin))
+            if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
             {
-                await userManager.AddToRoleAsync(user, UserRoles.Admin);
+                await _userManager.AddToRoleAsync(user, UserRoles.Admin);
             }
 
             return Ok(new Response { Status = "Success", Message = "User created successfully." });
@@ -144,11 +149,11 @@ namespace NotificationHub.Sample.API.Controllers
             if (!ModelState.IsValid)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Invalid request!" });
 
-            var user = await userManager.FindByEmailAsync(resetPasswordModel.Email);
+            var user = await _userManager.FindByEmailAsync(resetPasswordModel.Email);
             if (user == null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User does not exist!" });
 
-            var resetPassResult = await userManager.ResetPasswordAsync(user, resetPasswordModel.Token, resetPasswordModel.Password);
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPasswordModel.Token, resetPasswordModel.Password);
 
             if (!resetPassResult.Succeeded)
             {
@@ -168,13 +173,13 @@ namespace NotificationHub.Sample.API.Controllers
             if (!ModelState.IsValid)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "Invalid request!" });
 
-            var user = await userManager.FindByEmailAsync(resetPasswordModel.Email);
+            var user = await _userManager.FindByEmailAsync(resetPasswordModel.Email);
             if (user == null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User does not exist!" });
 
-            string resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+            string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-            var resetPassResult = await userManager.ResetPasswordAsync(user, resetToken, resetPasswordModel.Password);
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetToken, resetPasswordModel.Password);
 
             if (!resetPassResult.Succeeded)
             {

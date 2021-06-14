@@ -24,7 +24,7 @@
     "@react-navigation/native": "^5.7.4",
     "@react-navigation/stack": "^5.9.3",
     "@reduxjs/toolkit": "^1.4.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "jwt-decode": "^3.1.2",
     "mime": "^1.6.0",
     "radio-buttons-react-native": "^1.0.4",

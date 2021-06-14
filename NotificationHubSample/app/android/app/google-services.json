@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "14698722577",
+    "firebase_url": "https://contoso-land-survey.firebaseio.com",
+    "project_id": "contoso-land-survey",
+    "storage_bucket": "contoso-land-survey.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14698722577:android:484dead477dbe44be488b0",
+        "android_client_info": {
+          "package_name": "com.microsoft.samples.anh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14698722577-vpf555jrn26196msqrv5j3ldfmlh9b02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY25aM2Tg5kL9GEgxPneYiuQDiADfVsx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14698722577-vpf555jrn26196msqrv5j3ldfmlh9b02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

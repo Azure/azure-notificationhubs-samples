@@ -111,6 +111,7 @@ class AzureNotificationHub:
                 "Error sending notification. Received HTTP code " + str(response.status_code) + " " + response.reason)
 
         response.close()
+        return response.status_code
 
     # scheduled_time must be UTC
     @classmethod

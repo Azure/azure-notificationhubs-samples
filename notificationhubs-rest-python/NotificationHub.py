@@ -152,7 +152,7 @@ class AzureNotificationHub:
 
             headers[cls.DEVICE_TOKEN_HEADER_NAME] = device_handle
         else:
-            url += "/" + cls.API_VERSION
+            url += "/?" + cls.API_VERSION
 
         if isinstance(tag_or_tag_expression, set):
             tag_list = ' || '.join(tag_or_tag_expression)

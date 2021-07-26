@@ -248,6 +248,8 @@ class AzureNotificationHub:
 
     def send_template_notification(self, properties, tags="", scheduled_time=None, skip_send=False):
         nh = AzureNotification("template", properties)
-        status, headers = self.__send_notification(nh, tags, scheduled_time=scheduled_time, skip_send=skip_send)
+        status, headers = self.__send_notification(nh, is_direct=False, tag_or_tag_expression=tags,
+                                                   scheduled_time=scheduled_time,
+                                                   skip_send=skip_send)
 
         return status, headers

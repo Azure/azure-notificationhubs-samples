@@ -101,7 +101,7 @@ class AzureNotificationHub:
             # print out detailed response information for debugging purpose
             print("\n\n--- RESPONSE ---")
             print("Code:" + str(response.status_code) + " / Reason: " + response.reason)
-            print("Headers: " + json.dumps(dict(response.headers), sort_keys=True, indent=4, separetors=(' ', ': ')))
+            print("Headers: " + json.dumps(dict(response.headers), sort_keys=True, indent=4, separators=(' ', ': ')))
             print("Content:\n" + response.text)
             print("--- END RESPONSE ---")
 

@@ -101,7 +101,7 @@ class AzureNotificationHub:
             # print out detailed response information for debugging purpose
             print("\n\n--- RESPONSE ---")
             print("Code:" + str(response.status_code) + " / Reason: " + response.reason)
-            print("Headers: " + response.headers)
+            print("Headers: " + json.dumps(dict(response.headers), sort_keys=True, indent=4, separators=(' ', ': ')))
             print("Content:\n" + response.text)
             print("--- END RESPONSE ---")
 
@@ -111,6 +111,7 @@ class AzureNotificationHub:
                 "Error sending notification. Received HTTP code " + str(response.status_code) + " " + response.reason)
 
         response.close()
+        return response.status_code
 
     # scheduled_time must be UTC
     @classmethod
@@ -151,7 +152,7 @@ class AzureNotificationHub:
 
             headers[cls.DEVICE_TOKEN_HEADER_NAME] = device_handle
         else:
-            url += "/" + cls.API_VERSION
+            url += "/?" + cls.API_VERSION
 
         if isinstance(tag_or_tag_expression, set):
             tag_list = ' || '.join(tag_or_tag_expression)
@@ -248,6 +249,8 @@ class AzureNotificationHub:
 
     def send_template_notification(self, properties, tags="", scheduled_time=None, skip_send=False):
         nh = AzureNotification("template", properties)
-        status, headers = self.__send_notification(nh, tags, scheduled_time=scheduled_time, skip_send=skip_send)
+        status, headers = self.__send_notification(nh, is_direct=False, tag_or_tag_expression=tags,
+                                                   scheduled_time=scheduled_time,
+                                                   skip_send=skip_send)
 
         return status, headers

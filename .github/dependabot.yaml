@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/apache-cordova"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/Ionic-3"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "npm"
+    directory: "/Ionic-4"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "yarn"
+    directory: "/NotificationHubSample"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "/notificationhubs-rest-python"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "nuget"
+    directory: "/PushToSafari"
+    schedule:
+      interval: "weekly"

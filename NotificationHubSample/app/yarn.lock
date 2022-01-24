@@ -5280,8 +5280,8 @@ mute-stream@0.0.8:
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.8.tgz"
 
 nanoid@^3.1.12:
-  version "3.1.12"
-  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.12.tgz"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
 
 nanomatch@^1.2.9:
   version "1.2.13"

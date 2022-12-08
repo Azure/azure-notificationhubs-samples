@@ -38,7 +38,7 @@
     "react-native-navbar": "^2.1.0",
     "react-native-paper": "^4.4.1",
     "react-native-push-notification": "^6.1.2",
-    "react-native-reanimated": "^1.13.1",
+    "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.12.0",
     "react-native-simple-radio-button": "^2.7.4",

@@ -1749,25 +1749,33 @@
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-windows/cli@0.63.0":
-  version "0.63.0"
-  resolved "https://registry.npmjs.org/@react-native-windows/cli/-/cli-0.63.0.tgz"
+"@react-native-windows/cli@0.63.14":
+  version "0.63.14"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.63.14.tgz#b077f2d090f2d63f2defa71926c4de77b0041ea8"
   dependencies:
+    "@react-native-windows/telemetry" "^0.63.5"
+    "@xmldom/xmldom" "^0.7.5"
     chalk "^3.0.0"
     cli-spinners "^2.2.0"
     envinfo "^7.5.0"
+    find-up "^4.1.0"
     glob "^7.1.1"
     inquirer "^3.0.6"
     mustache "^4.0.1"
-    nuget-exe "4.9.2"
+    nuget-exe "5.8.0"
     ora "^3.4.0"
     semver "^7.1.3"
-    shelljs "^0.7.8"
+    shelljs "^0.8.4"
     username "^5.1.0"
     uuid "^3.3.2"
     xml-parser "^1.2.1"
-    xmldom "^0.3.0"
     xpath "^0.0.27"
+
+"@react-native-windows/telemetry@^0.63.5":
+  version "0.63.5"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/telemetry/-/telemetry-0.63.5.tgz#77d3a490b26490a642e7d7ce21cd5c06b768f4be"
+  dependencies:
+    applicationinsights "^1.8.8"
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
@@ -2090,6 +2098,10 @@
     "@uifabricshared/theme-registry" ">=0.3.71 <1.0.0"
     "@uifabricshared/theming-ramp" ">=0.11.0 <1.0.0"
 
+"@xmldom/xmldom@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.7.5.tgz#09fa51e356d07d0be200642b0e4f91d8e6dd408d"
+
 abab@^2.0.0:
   version "2.0.5"
   resolved "https://registry.npmjs.org/abab/-/abab-2.0.5.tgz"
@@ -2236,6 +2248,15 @@ appdirsjs@^1.2.4:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/appdirsjs/-/appdirsjs-1.2.5.tgz#c9888c8a0a908014533d5176ec56f1d5a8fd3700"
 
+applicationinsights@^1.8.8:
+  version "1.8.10"
+  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-1.8.10.tgz#fffa482cd1519880fb888536a87081ac05130667"
+  dependencies:
+    cls-hooked "^4.2.2"
+    continuation-local-storage "^3.2.1"
+    diagnostic-channel "0.3.1"
+    diagnostic-channel-publishers "0.4.4"
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz"
@@ -2325,9 +2346,22 @@ astral-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-1.0.0.tgz"
 
+async-hook-jl@^1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/async-hook-jl/-/async-hook-jl-1.7.6.tgz#4fd25c2f864dbaf279c610d73bf97b1b28595e68"
+  dependencies:
+    stack-chain "^1.3.7"
+
 async-limiter@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
+
+async-listener@^0.6.0:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/async-listener/-/async-listener-0.6.10.tgz#a7c97abe570ba602d782273c0de60a51e3e17cbc"
+  dependencies:
+    semver "^5.3.0"
+    shimmer "^1.1.0"
 
 async@^2.4.0:
   version "2.6.4"
@@ -2727,6 +2761,14 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
 
+cls-hooked@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/cls-hooked/-/cls-hooked-4.2.2.tgz#ad2e9a4092680cdaffeb2d3551da0e225eae1908"
+  dependencies:
+    async-hook-jl "^1.7.6"
+    emitter-listener "^1.0.1"
+    semver "^5.4.1"
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
@@ -2848,6 +2890,13 @@ connect@^3.6.5:
     finalhandler "1.1.2"
     parseurl "~1.3.3"
     utils-merge "1.0.1"
+
+continuation-local-storage@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/continuation-local-storage/-/continuation-local-storage-3.2.1.tgz#11f613f74e914fe9b34c92ad2d28fe6ae1db7ffb"
+  dependencies:
+    async-listener "^0.6.0"
+    emitter-listener "^1.1.1"
 
 convert-source-map@^1.4.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.7.0"
@@ -3047,6 +3096,16 @@ detect-newline@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/detect-newline/-/detect-newline-3.1.0.tgz"
 
+diagnostic-channel-publishers@0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/diagnostic-channel-publishers/-/diagnostic-channel-publishers-0.4.4.tgz#57c3b80b7e7f576f95be3a257d5e94550f0082d6"
+
+diagnostic-channel@0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/diagnostic-channel/-/diagnostic-channel-0.3.1.tgz#7faa143e107f861be3046539eb4908faab3f53fd"
+  dependencies:
+    semver "^5.3.0"
+
 diff-sequences@^25.2.6:
   version "25.2.6"
   resolved "https://registry.npmjs.org/diff-sequences/-/diff-sequences-25.2.6.tgz"
@@ -3105,6 +3164,12 @@ ee-first@1.1.1:
 electron-to-chromium@^1.3.723:
   version "1.3.780"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.780.tgz#f946e10dc0005a3b59b9afa2d2c92f5c421f7fc5"
+
+emitter-listener@^1.0.1, emitter-listener@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/emitter-listener/-/emitter-listener-1.1.2.tgz#56b140e8f6992375b3d7cb2cab1cc7432d9632e8"
+  dependencies:
+    shimmer "^1.2.0"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -5566,9 +5631,9 @@ nth-check@^1.0.2:
   dependencies:
     boolbase "~1.0.0"
 
-nuget-exe@4.9.2:
-  version "4.9.2"
-  resolved "https://registry.npmjs.org/nuget-exe/-/nuget-exe-4.9.2.tgz"
+nuget-exe@5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/nuget-exe/-/nuget-exe-5.8.0.tgz#45287c4ad8308a5a7057913b32c08998fe7fdc82"
 
 nullthrows@^1.1.1:
   version "1.1.1"
@@ -6167,12 +6232,12 @@ react-native-vector-icons@^7.1.0:
     prop-types "^15.7.2"
     yargs "^15.0.2"
 
-react-native-windows@^0.63.5:
-  version "0.63.5"
-  resolved "https://registry.npmjs.org/react-native-windows/-/react-native-windows-0.63.5.tgz"
+react-native-windows@^0.63.41:
+  version "0.63.41"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.41.tgz#96f59bc24749b6c167cb4f35fd74b66f78f4a4bb"
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@react-native-windows/cli" "0.63.0"
+    "@react-native-windows/cli" "0.63.14"
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
@@ -6610,7 +6675,7 @@ scheduler@^0.20.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
+"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz"
 
@@ -6711,14 +6776,6 @@ shell-quote@1.6.1, shell-quote@^1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
-shelljs@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.npmjs.org/shelljs/-/shelljs-0.7.8.tgz"
-  dependencies:
-    glob "^7.0.0"
-    interpret "^1.0.0"
-    rechoir "^0.6.2"
-
 shelljs@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.4.tgz#de7684feeb767f8716b326078a8a00875890e3c2"
@@ -6730,6 +6787,10 @@ shelljs@^0.8.4:
 shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/shellwords/-/shellwords-0.1.1.tgz"
+
+shimmer@^1.1.0, shimmer@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.2.1.tgz#610859f7de327b587efebf501fb43117f9aff337"
 
 side-channel@^1.0.2:
   version "1.0.3"
@@ -6881,6 +6942,10 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
+
+stack-chain@^1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/stack-chain/-/stack-chain-1.3.7.tgz#d192c9ff4ea6a22c94c4dd459171e3f00cea1285"
 
 stack-utils@^1.0.1:
   version "1.0.2"
@@ -7525,10 +7590,6 @@ xmldoc@^1.1.2:
   resolved "https://registry.npmjs.org/xmldoc/-/xmldoc-1.1.2.tgz"
   dependencies:
     sax "^1.2.1"
-
-xmldom@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/xmldom/-/xmldom-0.3.0.tgz"
 
 xpath@^0.0.27:
   version "0.0.27"

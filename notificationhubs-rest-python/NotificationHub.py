@@ -273,26 +273,41 @@ class AzureNotificationHub:
 
         headers = {
             'Content-type': content_type,
-            'Authorization': cls._generate_sas_token()
+            'Authorization': cls.__generate_sas_token()
         }
 
-        return cls._make_http_request(
+        return cls.__make_http_request(
             cls.Endpoint + cls.HubName + f"/installations/{installationId}?api-version=2015-01",
             'put',
             notification.payload,
             headers)
 
     @classmethod
-    def __get_device_registration(cls):
+    def __get_all_device_registrations(cls):
         content_type = "application/json"
 
         headers = {
             'Content-type': content_type,
-            'Authorization': cls._generate_sas_token()
+            'Authorization': cls.__generate_sas_token()
         }
 
-        return cls._make_http_request(
+        return cls.__make_http_request(
             cls.Endpoint + cls.HubName + "/registrations?api-version=2015-01",
+            'get',
+            None,
+            headers)
+
+    @classmethod
+    def __get_device_registration(cls, registrationId):
+        content_type = "application/json"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls.__generate_sas_token()
+        }
+
+        return cls.__make_http_request(
+            cls.Endpoint + cls.HubName + f"/registrations/{registrationId}?api-version=2015-01",
             'get',
             None,
             headers)
@@ -303,10 +318,10 @@ class AzureNotificationHub:
 
         headers = {
             'Content-type': content_type,
-            'Authorization': cls._generate_sas_token()
+            'Authorization': cls.__generate_sas_token()
         }
 
-        return cls._make_http_request(
+        return cls.__make_http_request(
             cls.Endpoint + cls.HubName + f"/installations/{installationId}?api-version=2015-01",
             'get',
             None,
@@ -318,11 +333,11 @@ class AzureNotificationHub:
 
         headers = {
             'Content-type': content_type,
-            'Authorization': cls._generate_sas_token(),
+            'Authorization': cls.__generate_sas_token(),
             'If-Match': '*'
         }
 
-        return cls._make_http_request(
+        return cls.__make_http_request(
             cls.Endpoint + cls.HubName + f"/registrations/{registrationId}?api-version=2015-01",
             'delete',
             None,
@@ -334,11 +349,11 @@ class AzureNotificationHub:
 
         headers = {
             'Content-type': content_type,
-            'Authorization': cls._generate_sas_token(), 
+            'Authorization': cls.__generate_sas_token(), 
             'If-Match': '*'
         }
 
-        return cls._make_http_request(
+        return cls.__make_http_request(
             cls.Endpoint + cls.HubName + f"/installations/{installationid}?api-version=2015-01",
             'delete',
             None,
@@ -374,8 +389,11 @@ class AzureNotificationHub:
         nh = AzureNotification(registration_data["platform"], registration_data)
         return self.__add_device_installation(registration_data["installationId"], nh)
 
-    def get_device_registrations(self):
-        return self.__get_device_registration()
+    def get_all_device_registrations(self):
+        return self.__get_all_device_registrations()
+ 
+    def get_device_registration(self, registrationid):
+        return self.__get_device_registration(registrationid)
 
     def get_device_installation(self, installationId):
         return self.__get_device_installation(installationId)

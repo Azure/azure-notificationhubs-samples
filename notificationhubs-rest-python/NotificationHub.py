@@ -86,16 +86,24 @@ class AzureNotificationHub:
         return sas_token
 
     @classmethod
-    def __make_http_request(cls, url, payload, headers):
+    def __make_http_request(cls, url, type, payload, headers):
         if cls.Debug > 0:
             # adding this querystring parameter gets detailed information about the PNS send notification outcome
             url += cls.DEBUG_SEND
             print("--- REQUEST ---")
             print("URI: " + url)
+            print("Type: " + type)
             print("Headers: " + json.dumps(headers, sort_keys=True, indent=4, separators=(' ', ': ')))
             print("--- END REQUEST ---\n")
 
-        response = requests.post(url, data=payload, headers=headers)
+        if type == 'post':
+            response = requests.post(url, headers=headers, data=payload)
+        elif type == 'put':
+            response = requests.put(url, headers=headers, data=json.dumps(payload))
+        elif type == 'delete':
+            response = requests.delete(url, headers=headers)
+        else:
+            response = requests.get(url, headers=headers)
 
         if cls.Debug > 0:
             # print out detailed response information for debugging purpose
@@ -105,13 +113,11 @@ class AzureNotificationHub:
             print("Content:\n" + response.text)
             print("--- END RESPONSE ---")
 
-        elif response.status_code != 201:
-            # Successful outcome of send message is HTTP 201 - Created
-            raise Exception(
-                "Error sending notification. Received HTTP code " + str(response.status_code) + " " + response.reason)
+        if response.status_code >= 400:
+            raise Exception("Error: " + str(response.status_code) + " / Reason: " + response.reason + " / Content: " + response.text)
 
         response.close()
-        return response.status_code
+        return response.status_code, response.text
 
     # scheduled_time must be UTC
     @classmethod
@@ -170,7 +176,7 @@ class AzureNotificationHub:
         if skip_send:
             status = 201
         else:
-            status = cls.__make_http_request(url, payload_to_send, headers)
+            status = cls.__make_http_request(url, 'post', payload_to_send, headers)
 
         return status, headers
 
@@ -254,3 +260,128 @@ class AzureNotificationHub:
                                                    skip_send=skip_send)
 
         return status, headers
+
+   # scheduled_time must be UTC
+    @classmethod
+    def __add_device_installation(cls, installationId, notification):
+        json_platforms = ['template', 'apple', 'gcm', 'adm', 'baidu']
+
+        if any(x in notification.format for x in json_platforms):
+            content_type = "application/json"
+        else:
+            content_type = "application/xml"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls._generate_sas_token()
+        }
+
+        return cls._make_http_request(
+            cls.Endpoint + cls.HubName + f"/installations/{installationId}?api-version=2015-01",
+            'put',
+            notification.payload,
+            headers)
+
+    @classmethod
+    def __get_device_registration(cls):
+        content_type = "application/json"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls._generate_sas_token()
+        }
+
+        return cls._make_http_request(
+            cls.Endpoint + cls.HubName + "/registrations?api-version=2015-01",
+            'get',
+            None,
+            headers)
+
+    @classmethod
+    def __get_device_installation(cls, installationId):
+        content_type = "application/json"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls._generate_sas_token()
+        }
+
+        return cls._make_http_request(
+            cls.Endpoint + cls.HubName + f"/installations/{installationId}?api-version=2015-01",
+            'get',
+            None,
+            headers)
+
+    @classmethod
+    def __delete_device_registration(cls, registrationId):
+        content_type = "application/json"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls._generate_sas_token(),
+            'If-Match': '*'
+        }
+
+        return cls._make_http_request(
+            cls.Endpoint + cls.HubName + f"/registrations/{registrationId}?api-version=2015-01",
+            'delete',
+            None,
+            headers)
+
+    @classmethod
+    def __delete_device_installation(cls, installationid):
+        content_type = "application/json"
+
+        headers = {
+            'Content-type': content_type,
+            'Authorization': cls._generate_sas_token(), 
+            'If-Match': '*'
+        }
+
+        return cls._make_http_request(
+            cls.Endpoint + cls.HubName + f"/installations/{installationid}?api-version=2015-01",
+            'delete',
+            None,
+            headers)
+
+    def send_notification(self, is_direct, notification_data="", tags="", device_handle=None, scheduled_time=None):
+        payload = {
+            "notification": {
+                "title": notification_data["text"],
+                "body": notification_data["action"]
+            },
+            "data": {
+                "action": notification_data["action"]
+            }
+        }
+
+        if "to" in notification_data:
+            if "userId" in notification_data["to"]:
+                tags = '$UserId:{' + notification_data["to"]["userId"] + '}'
+            elif "installationId" in notification_data["to"]:
+                tags = '$InstallationId:{' + notification_data["to"]["installationId"] + '}'
+            else:
+                tags = '$InstallationId:{' + notification_data["to"]["deviceId"] + '}'
+
+        return self._send_notification(
+            AzureNotification('gcm', payload),
+            is_direct=is_direct,
+            tag_or_tag_expression=tags,
+            device_handle=device_handle,
+            scheduled_time=scheduled_time)
+
+    def add_device_installation(self, registration_data):
+        nh = AzureNotification(registration_data["platform"], registration_data)
+        return self.__add_device_installation(registration_data["installationId"], nh)
+
+    def get_device_registrations(self):
+        return self.__get_device_registration()
+
+    def get_device_installation(self, installationId):
+        return self.__get_device_installation(installationId)
+    
+    def delete_device_registrations(self, registrationId):
+        return self.__delete_device_registration(registrationId)
+
+    def delete_device_installation(self, installationId):
+        return self.__delete_device_installation(installationId)
